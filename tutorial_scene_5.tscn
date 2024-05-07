@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://c07h4kpvvjee6"]
+
+[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_io7by"]
+[ext_resource type="Script" path="res://tutorial_scene_5.gd" id="1_iw6sv"]
+[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_s5c3n"]
+[ext_resource type="Texture2D" uid="uid://buw5krok16i7v" path="res://art/Intention.png" id="3_3eg8h"]
+[ext_resource type="Texture2D" uid="uid://b74c1xg547oq2" path="res://art/intentionShield.png" id="4_7pnfk"]
+
+[sub_resource type="Gradient" id="Gradient_pa23l"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5rmu8"]
+gradient = SubResource("Gradient_pa23l")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_1s365"]
+line_spacing = 10.0
+shadow_size = 4
+shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i7pv"]
+shader = ExtResource("1_io7by")
+shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
+shader_parameter/line_thickness = 5.447
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_iw6sv")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.10676, 144.333)
+texture = SubResource("GradientTexture1D_5rmu8")
+expand_mode = 3
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 12.0
+offset_right = 155.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SDL Security Game"
+label_settings = SubResource("LabelSettings_1s365")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 44.0
+offset_right = 165.0
+offset_bottom = 126.0
+text = "Zum Glück hast du einen kleinen Vorteil: Über den Köpfen der Angreifer kannst du erkennen, welchen Zug sie als nächstes machen werden. 
+
+Angreifen - oder Verteidigen.
+
+Überlege schlau, wie du auf ihre Intentionen reagierst, und benutze deine Karten überlegt!"
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 208.0
+offset_top = 117.0
+offset_right = 243.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
+text = "Weiter"
+
+[node name="SdlPractice" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0i7pv")
+position = Vector2(48.0625, 10.375)
+scale = Vector2(0.0561719, 0.0517578)
+texture = ExtResource("2_s5c3n")
+
+[node name="Backgroundv2" type="Sprite2D" parent="."]
+position = Vector2(214.5, 61.3125)
+scale = Vector2(0.0359008, 0.0257865)
+
+[node name="Intention" type="Sprite2D" parent="."]
+position = Vector2(190, 33)
+scale = Vector2(0.0754352, 0.0793104)
+texture = ExtResource("3_3eg8h")
+
+[node name="IntentionShield" type="Sprite2D" parent="."]
+position = Vector2(214, 87)
+scale = Vector2(0.122043, 0.116379)
+texture = ExtResource("4_7pnfk")
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

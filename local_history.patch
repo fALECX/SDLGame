@@ -1,0 +1,70 @@
+Index: scenes/battle/battle.tscn
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/scenes/battle/battle.tscn b/scenes/battle/battle.tscn
+--- a/scenes/battle/battle.tscn	
++++ b/scenes/battle/battle.tscn	(date 1714068889805)
+@@ -69,11 +69,6 @@
+ 
+ [node name="CardTargetSelector" parent="." instance=ExtResource("3_vyv1n")]
+ 
+-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand")]
+-script = ExtResource("8_3di7i")
+-player = NodePath("../Player")
+-hand = NodePath("../BattleUI/Hand")
+-
+ [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+ script = ExtResource("7_18vit")
+ 
+@@ -159,6 +154,11 @@
+ horizontal_alignment = 1
+ vertical_alignment = 1
+ 
++[node name="PlayerHandler" type="Node" parent="BattleUI/DrawPileButton" node_paths=PackedStringArray("player", "hand")]
++script = ExtResource("8_3di7i")
++player = NodePath("../../../Player")
++hand = NodePath("../../Hand")
++
+ [node name="DiscardPileButton" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("17_8fteu")]
+ unique_name_in_owner = true
+ anchors_preset = 3
+Index: scenes/battle_reward/battle_reward.gd
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/scenes/battle_reward/battle_reward.gd b/scenes/battle_reward/battle_reward.gd
+--- a/scenes/battle_reward/battle_reward.gd	
++++ b/scenes/battle_reward/battle_reward.gd	(date 1714067706114)
+@@ -52,6 +52,8 @@
+ 
+ func add_gold_reward(amount: int) -> void:
+ 	var gold_reward := REWARD_BUTTON.instantiate() as RewardButton
++
++	#wichtig: übergabe von daten an reward_button !!!
+ 	gold_reward.reward_icon = REWARD_BUTTON_DATA[Type.GOLD][0]
+ 	gold_reward.reward_text = REWARD_BUTTON_DATA[Type.GOLD][1] % amount
+ 	gold_reward.pressed.connect(_on_gold_reward_taken.bind(amount))
+Index: scenes/battle_reward/battle_reward.tscn
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/scenes/battle_reward/battle_reward.tscn b/scenes/battle_reward/battle_reward.tscn
+--- a/scenes/battle_reward/battle_reward.tscn	
++++ b/scenes/battle_reward/battle_reward.tscn	(date 1714068889517)
+@@ -76,11 +76,11 @@
+ 
+ [node name="SprintLabel" parent="VBoxContainer" instance=ExtResource("5_1uymj")]
+ unique_name_in_owner = true
++visible = false
+ layout_mode = 2
+ size_flags_horizontal = 4
+ size_flags_vertical = 4
+ theme_override_constants/separation = 5
+-label_text = ""
+ 
+ [node name="CustomTextSprint2" type="Label" parent="VBoxContainer/SprintLabel"]
+ unique_name_in_owner = true

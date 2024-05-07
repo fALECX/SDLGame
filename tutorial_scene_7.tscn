@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvc5w288a4bdk"]
+
+[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_7y4b1"]
+[ext_resource type="Script" path="res://tutorial_scene_7.gd" id="1_itakj"]
+[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_sp6gk"]
+
+[sub_resource type="Gradient" id="Gradient_b1174"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qpput"]
+gradient = SubResource("Gradient_b1174")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_761p8"]
+line_spacing = 10.0
+shadow_size = 4
+shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xckg6"]
+shader = ExtResource("1_7y4b1")
+shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
+shader_parameter/line_thickness = 5.447
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_itakj")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.10676, 144.333)
+texture = SubResource("GradientTexture1D_qpput")
+expand_mode = 3
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 255.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SDL Security Game"
+label_settings = SubResource("LabelSettings_761p8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 88.0
+text = "Keine Fragen mehr?
+
+Dann los gehts - und kämpf dich durch die Sprints! "
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 94.0
+offset_top = 95.0
+offset_right = 158.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
+text = "Ich hab bock!"
+
+[node name="SdlPractice" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xckg6")
+position = Vector2(48.0625, 10.375)
+scale = Vector2(0.0561719, 0.0517578)
+texture = ExtResource("2_sp6gk")
+
+[node name="Backgroundv2" type="Sprite2D" parent="."]
+position = Vector2(214.5, 61.3125)
+scale = Vector2(0.0359008, 0.0257865)
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

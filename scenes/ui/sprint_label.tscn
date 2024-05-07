@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5in4gcvgu7yn"]
+
+[ext_resource type="Script" path="res://scenes/ui/SprintLabel.gd" id="1_iyd11"]
+
+[node name="SprintLabel" type="HBoxContainer"]
+offset_left = 76.0
+offset_top = 8.0
+offset_right = 194.0
+offset_bottom = 24.0
+theme_override_constants/separation = 0
+script = ExtResource("1_iyd11")

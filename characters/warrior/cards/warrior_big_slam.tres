@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bs2avd7k0xgfx"]
+
+[ext_resource type="Texture2D" uid="uid://guu1dloprjew" path="res://art/SecurityCardLogo.png" id="1_k1q6t"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_slam.gd" id="2_0lti7"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/slash.ogg" id="3_si47m"]
+
+[resource]
+script = ExtResource("2_0lti7")
+id = "warrior_big_slam"
+type = 0
+rarity = 1
+target = 1
+cost = 1
+exhausts = true
+icon = ExtResource("1_k1q6t")
+tooltip_text = "[center] [color=red][u] QUALITY GATES - SDL 3  [/u][/color]
+
+Quality Gates und Bug Bars sind zusammen definierte Mindestanforderungen an Sicherheit und Datenschutz. 
+
+Das Entwicklerteam verhandelt über die sog. Quality Gates, bspw: dass alle Compiler Warnungen behandelt sind vor dem kommenden Code Check-in.
+
+[color=\"ff0000\"]Füge %s Schaden zu und 2 Exposed.[/color][/center]"
+sound = ExtResource("3_si47m")
