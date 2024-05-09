@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw2pugm2n1ybw"
-path="res://.godot/imported/BusinessManEnemy1.jpeg-b0d5c37cac9406ae8caa8f4223a46dbd.ctex"
+uid="uid://dwdsysngr42j"
+path="res://.godot/imported/SchulungNeuUntenLogo.png-f320912d7b830f0c8d59b11efc5f8678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BusinessManEnemy1.jpeg"
-dest_files=["res://.godot/imported/BusinessManEnemy1.jpeg-b0d5c37cac9406ae8caa8f4223a46dbd.ctex"]
+source_file="res://art/SchulungNeuUntenLogo.png"
+dest_files=["res://.godot/imported/SchulungNeuUntenLogo.png-f320912d7b830f0c8d59b11efc5f8678.ctex"]
 
 [params]
 

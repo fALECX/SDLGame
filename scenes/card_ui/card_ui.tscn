@@ -5,7 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://b4b3e0d14kvmi" path="res://scenes/card_ui/card_base_stylebox.tres" id="3_ayugj"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_tqtyy"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_snb4g"]
-[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="4_vps4j"]
+[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="4_vqdpd"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_2ks3p"]
 [ext_resource type="Texture2D" uid="uid://cpmy5std4fafh" path="res://art/rarity.png" id="5_4r7pw"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_jk8rm"]
@@ -41,9 +41,12 @@ mouse_filter = 2
 theme_override_styles/panel = ExtResource("3_ayugj")
 
 [node name="Cost" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 12.0
-offset_bottom = 12.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 8.0
+offset_bottom = 9.0
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,27 +58,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
+offset_left = -12.0
+offset_top = -14.0
+offset_right = 13.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.986742, 1)
 mouse_filter = 2
-texture = ExtResource("4_vps4j")
+texture = ExtResource("4_vqdpd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Rarity" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -10.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 10.0
+offset_left = -5.0
+offset_top = 1.0
+offset_bottom = 7.0
 grow_horizontal = 0
 mouse_filter = 2
 texture = ExtResource("5_4r7pw")
@@ -83,7 +86,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="DropPointDetector" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 monitorable = false
 

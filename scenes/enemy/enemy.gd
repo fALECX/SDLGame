@@ -71,6 +71,7 @@ func update_enemy() -> void:
 		await ready
 	
 	sprite_2d.texture = stats.art
+	sprite_2d.scale = Vector2(0.15,0.15)
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x / 2 + ARROW_OFFSET)
 	setup_ai()
 	update_stats()

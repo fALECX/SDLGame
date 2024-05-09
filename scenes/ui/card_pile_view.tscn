@@ -207,4 +207,5 @@ text = "Back"
 
 [node name="CardTooltipPopup" parent="." instance=ExtResource("4_r5bux")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1

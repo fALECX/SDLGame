@@ -74,6 +74,7 @@ show_max_hp = true
 
 [node name="GoldUI" parent="TopBar/HBoxContainer/Stats" instance=ExtResource("5_ybtdt")]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 

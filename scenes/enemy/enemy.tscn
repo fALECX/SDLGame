@@ -28,18 +28,22 @@ texture = ExtResource("2_x2iwj")
 shape = SubResource("RectangleShape2D_3gsft")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_qiomm")]
-offset_top = 7.0
-offset_bottom = 23.0
+offset_left = -42.0
+offset_top = 35.0
+offset_right = 48.0
+offset_bottom = 51.0
 
 [node name="IntentUI" parent="." instance=ExtResource("5_xytk4")]
-offset_top = -24.0
-offset_bottom = -10.0
+offset_left = -18.0
+offset_top = -48.0
+offset_right = 22.0
+offset_bottom = -34.0
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_2lk1r")]
-offset_left = -26.0
-offset_top = 23.0
-offset_right = -26.0
-offset_bottom = 23.0
+offset_left = -24.0
+offset_top = 19.0
+offset_right = -24.0
+offset_bottom = 19.0
 columns = 4
 status_owner = NodePath("..")
 
