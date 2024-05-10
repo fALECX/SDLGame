@@ -20,13 +20,14 @@
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_qvh8t"]
 [ext_resource type="PackedScene" uid="uid://bcdmoid8212ip" path="res://scenes/ui/card_pile_opener.tscn" id="17_8fteu"]
 [ext_resource type="PackedScene" uid="uid://dfig8d63ggof1" path="res://scenes/ui/battle_over_panel.tscn" id="17_xrby7"]
-[ext_resource type="Texture2D" uid="uid://qlu3p1imgcrw" path="res://art/DeckBildNeu.png" id="19_68nrg"]
-[ext_resource type="Texture2D" uid="uid://csmyixu2obklo" path="res://art/DeckUsedNeu.png" id="20_7i2by"]
+[ext_resource type="Texture2D" uid="uid://ib5rv5vo4epg" path="res://art/Deckpile.png" id="19_8ob28"]
 [ext_resource type="PackedScene" uid="uid://dws7irhbqmomu" path="res://scenes/ui/card_pile_view.tscn" id="20_tpgna"]
 [ext_resource type="PackedScene" uid="uid://hvec6vsgxakl" path="res://scenes/ui/status_view.tscn" id="24_gocfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyg5u"]
 size = Vector2(256, 100)
+
+[sub_resource type="Theme" id="Theme_a6jfb"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_4s751")
@@ -135,6 +136,7 @@ offset_top = -21.0
 offset_right = 23.0
 offset_bottom = -5.0
 grow_vertical = 0
+theme = SubResource("Theme_a6jfb")
 counter = NodePath("Counter")
 
 [node name="TextureRect" type="TextureRect" parent="BattleUI/DrawPileButton"]
@@ -142,14 +144,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 2.0
-offset_right = -4.0
-offset_bottom = 2.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 3.13559
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("19_68nrg")
-expand_mode = 1
+texture = ExtResource("19_8ob28")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Counter" type="Label" parent="BattleUI/DrawPileButton"]
@@ -176,27 +178,27 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -11.0
-offset_right = -12.0
-offset_bottom = 5.0
+offset_left = -20.0
+offset_top = -18.0
+offset_right = -4.0
+offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
 counter = NodePath("Counter")
 
-[node name="TextureRect" type="TextureRect" parent="BattleUI/DiscardPileButton"]
+[node name="TextureRect2" type="TextureRect" parent="BattleUI/DiscardPileButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -8.0
-offset_right = 5.0
-offset_bottom = -8.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.13559
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_7i2by")
-expand_mode = 1
+texture = ExtResource("19_8ob28")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Counter" type="Label" parent="BattleUI/DiscardPileButton"]
@@ -204,10 +206,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -15.0
-offset_right = 7.0
-offset_bottom = -7.0
+offset_left = -10.0
+offset_top = -9.0
+offset_bottom = -1.0
 grow_vertical = 0
 text = "99"
 horizontal_alignment = 1

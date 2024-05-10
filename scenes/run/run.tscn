@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6uus0vr6amco" path="res://scenes/ui/gold_ui.tscn" id="5_ybtdt"]
 [ext_resource type="PackedScene" uid="uid://bgv2atk5gusnu" path="res://scenes/ui/health_ui.tscn" id="6_7uaii"]
 [ext_resource type="PackedScene" uid="uid://dc62dcaeqb631" path="res://scenes/relic_handler/relic_handler.tscn" id="8_knud8"]
-[ext_resource type="Texture2D" uid="uid://qlu3p1imgcrw" path="res://art/DeckBildNeu.png" id="8_vhpp3"]
+[ext_resource type="Texture2D" uid="uid://ib5rv5vo4epg" path="res://art/Deckpile.png" id="8_ui5sg"]
 [ext_resource type="PackedScene" uid="uid://8f3j8enkvdko" path="res://scenes/relic_handler/relic_tooltip.tscn" id="9_34cmp"]
 [ext_resource type="Script" path="res://scenes/run/pause_menu.gd" id="10_gnqne"]
 
@@ -98,10 +98,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 3.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_vhpp3")
-expand_mode = 1
+texture = ExtResource("8_ui5sg")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="TopBar/HBoxContainer/DeckButton"]

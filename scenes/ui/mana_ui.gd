@@ -1,10 +1,13 @@
 class_name ManaUI
 extends Panel
 
+#preload a texture
+#var mana_icon: Texture = preload("res://assets/mana_icon.png")
+
 @export var char_stats: CharacterStats : set = set_char_stats
 
 @onready var mana_label: Label = $ManaLabel
-
+@onready var mana_icon: TextureRect = $ManaIcon
 
 func set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
@@ -20,3 +23,7 @@ func set_char_stats(value: CharacterStats) -> void:
 
 func _on_stats_changed() -> void:
 	mana_label.text = "%s/%s" % [char_stats.mana, char_stats.max_mana]
+	#if char_stats.mana == 2:
+	#	mana_icon.texture =
+
+
