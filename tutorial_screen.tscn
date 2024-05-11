@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp05e505dl0fb"]
+[gd_scene load_steps=9 format=3 uid="uid://dp05e505dl0fb"]
 
 [ext_resource type="Script" path="res://tutorial_screen.gd" id="1_wnrei"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="2_ply34"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_te6nu"]
 [ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="3_7uywj"]
 
 [sub_resource type="Gradient" id="Gradient_ecyhm"]
@@ -75,6 +76,16 @@ offset_bottom = 134.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
 text = "Weiter"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
+show_behind_parent = true
+offset_right = 36.0
+offset_bottom = 16.0
+texture = ExtResource("2_te6nu")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [node name="SdlPractice" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_x0umb")

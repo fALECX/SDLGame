@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dws7irhbqmomu"]
+[gd_scene load_steps=7 format=3 uid="uid://dws7irhbqmomu"]
 
 [ext_resource type="PackedScene" uid="uid://covniifh0ij4j" path="res://scenes/ui/card_menu_ui.tscn" id="1_axewt"]
 [ext_resource type="Script" path="res://scenes/ui/card_pile_view.gd" id="1_fjqwr"]
 [ext_resource type="Resource" uid="uid://dyyfi3rcfxyug" path="res://characters/warrior/warrior_starting_deck.tres" id="2_1fhlg"]
 [ext_resource type="PackedScene" uid="uid://cc12360n5lh1n" path="res://scenes/ui/card_tooltip_popup.tscn" id="4_r5bux"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="4_sj8c5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gcrwt"]
 font_size = 12
@@ -204,6 +205,17 @@ offset_right = -8.0
 offset_bottom = 22.0
 grow_horizontal = 0
 text = "Back"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="BackButton"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 15.0
+texture = ExtResource("4_sj8c5")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [node name="CardTooltipPopup" parent="." instance=ExtResource("4_r5bux")]
 unique_name_in_owner = true

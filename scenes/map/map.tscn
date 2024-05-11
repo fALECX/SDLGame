@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_vjyut"]
 [ext_resource type="PackedScene" uid="uid://b33j64lkeq7i3" path="res://scenes/map/map_generator.tscn" id="2_5qslq"]
-[ext_resource type="Texture2D" uid="uid://cwsjii0roc08g" path="res://art/Backgroundv2.jpg" id="2_862gi"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="2_w0vvj"]
+[ext_resource type="Texture2D" uid="uid://bvsjtmt3d3o0o" path="res://art/BackgroundSprintmap.jpg" id="3_bxjxx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpxpe"]
 shader = ExtResource("2_w0vvj")
@@ -17,7 +17,7 @@ script = ExtResource("1_vjyut")
 material = SubResource("ShaderMaterial_bpxpe")
 position = Vector2(128, -145.5)
 scale = Vector2(0.171018, 0.180122)
-texture = ExtResource("2_862gi")
+texture = ExtResource("3_bxjxx")
 
 [node name="Visuals" type="Node2D" parent="."]
 

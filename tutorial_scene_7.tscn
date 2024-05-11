@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvc5w288a4bdk"]
+[gd_scene load_steps=9 format=3 uid="uid://cvc5w288a4bdk"]
 
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_7y4b1"]
 [ext_resource type="Script" path="res://tutorial_scene_7.gd" id="1_itakj"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_hs5o0"]
 [ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_sp6gk"]
 
 [sub_resource type="Gradient" id="Gradient_b1174"]
@@ -72,6 +73,16 @@ offset_bottom = 123.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
 text = "Ich hab bock!"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
+show_behind_parent = true
+offset_right = 65.0
+offset_bottom = 28.0
+texture = ExtResource("2_hs5o0")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [node name="SdlPractice" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xckg6")

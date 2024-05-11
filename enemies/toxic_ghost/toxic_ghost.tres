@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://40rtx2312wcx" path="res://enemies/toxic_ghost/toxic_ghost_ai.tscn" id="1_5u4vt"]
 [ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_xxmdg"]
-[ext_resource type="Texture2D" uid="uid://dbi2ri2v1jfia" path="res://art/businessmantext2.png" id="2_hpga5"]
+[ext_resource type="Texture2D" uid="uid://tg123keaqlcp" path="res://art/KundeGegner.png" id="2_w0cyp"]
 
 [resource]
 script = ExtResource("1_xxmdg")
 ai = ExtResource("1_5u4vt")
 max_health = 40
-art = ExtResource("2_hpga5")
+art = ExtResource("2_w0cyp")

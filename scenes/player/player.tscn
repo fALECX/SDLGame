@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://2n4lap6w3pde"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_il1gs"]
-[ext_resource type="Texture2D" uid="uid://ck4xpt7djqu3c" path="res://art/db bahn.png" id="2_cm478"]
+[ext_resource type="Texture2D" uid="uid://tquh0ocrnxi2" path="res://art/SuperHeroChar.png" id="2_gsr2n"]
 [ext_resource type="PackedScene" uid="uid://ph0oi5od64u5" path="res://scenes/ui/stats_ui.tscn" id="2_wnqqm"]
 [ext_resource type="PackedScene" uid="uid://bwf6cannqfu18" path="res://scenes/status_handler/status_handler.tscn" id="4_sb65w"]
 [ext_resource type="PackedScene" uid="uid://cear47kpsa6ms" path="res://scenes/modifier_handler/modifier_handler.tscn" id="5_lene4"]
@@ -11,13 +11,16 @@
 script = ExtResource("1_il1gs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(0.00749997, 0.0150794)
-texture = ExtResource("2_cm478")
+position = Vector2(9.53674e-07, -13)
+scale = Vector2(0.0738501, 0.0692583)
+texture = ExtResource("2_gsr2n")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_wnqqm")]
-offset_top = 6.0
-offset_bottom = 22.0
+offset_left = -34.0
+offset_top = 14.0
+offset_right = 62.0
+offset_bottom = 40.0
+scale = Vector2(0.7, 0.7)
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_sb65w")]
 offset_left = -23.0

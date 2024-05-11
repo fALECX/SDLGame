@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://3nntiov7y0hu"]
+[gd_scene load_steps=10 format=3 uid="uid://3nntiov7y0hu"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_a30hr"]
 [ext_resource type="Resource" uid="uid://db6tb870t0lae" path="res://scenes/run/run_init_data.tres" id="2_jy3gy"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="3_twvmt"]
 [ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="4_goafy"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="5_hef88"]
 
 [sub_resource type="Gradient" id="Gradient_qdctb"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
@@ -91,15 +92,45 @@ layout_mode = 2
 disabled = true
 text = "Weiter spielen"
 
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/ContinueButton"]
+show_behind_parent = true
+offset_right = 61.0
+offset_bottom = 15.0
+texture = ExtResource("5_hef88")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
+
 [node name="NewRun" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(60, 14)
 layout_mode = 2
 text = "Neues Spiel"
 
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/NewRun"]
+show_behind_parent = true
+offset_right = 61.0
+offset_bottom = 15.0
+texture = ExtResource("5_hef88")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
+
 [node name="Exit" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(60, 14)
 layout_mode = 2
 text = "Quit"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/Exit"]
+show_behind_parent = true
+offset_right = 61.0
+offset_bottom = 14.0
+texture = ExtResource("5_hef88")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]

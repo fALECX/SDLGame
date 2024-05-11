@@ -16,15 +16,16 @@ alignment = 1
 script = ExtResource("1_aarbb")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("1_giyx2")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Number" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
 text = "7"
 horizontal_alignment = 1
 vertical_alignment = 1

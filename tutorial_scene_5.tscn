@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c07h4kpvvjee6"]
+[gd_scene load_steps=11 format=3 uid="uid://c07h4kpvvjee6"]
 
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_io7by"]
 [ext_resource type="Script" path="res://tutorial_scene_5.gd" id="1_iw6sv"]
 [ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_s5c3n"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_wowe5"]
 [ext_resource type="Texture2D" uid="uid://buw5krok16i7v" path="res://art/Intention.png" id="3_3eg8h"]
 [ext_resource type="Texture2D" uid="uid://b74c1xg547oq2" path="res://art/intentionShield.png" id="4_7pnfk"]
 
@@ -76,6 +77,16 @@ offset_bottom = 133.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
 text = "Weiter"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
+show_behind_parent = true
+offset_right = 36.0
+offset_bottom = 17.0
+texture = ExtResource("2_wowe5")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [node name="SdlPractice" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0i7pv")

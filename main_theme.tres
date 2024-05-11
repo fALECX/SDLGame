@@ -1,21 +1,13 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c8cqncsqlplyu"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c8cqncsqlplyu"]
 
 [ext_resource type="StyleBox" uid="uid://b4b3e0d14kvmi" path="res://scenes/card_ui/card_base_stylebox.tres" id="1_cof14"]
 [ext_resource type="StyleBox" uid="uid://15046auw6h2r" path="res://scenes/card_ui/card_hover_stylebox.tres" id="1_lro6f"]
 [ext_resource type="FontFile" uid="uid://dscd8kstg31g5" path="res://ShylockNbpRegular-zjE1.ttf" id="3_fbfxl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8u4k"]
-bg_color = Color(0.631373, 0.34902, 0.321569, 0.501961)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.701961, 0.701961, 0.701961, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmy1r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ipyv"]
-bg_color = Color(0.631373, 0.34902, 0.321569, 1)
+bg_color = Color(0.580392, 0.545098, 0.572549, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -25,7 +17,7 @@ border_color = Color(0.615686, 0.576471, 0.282353, 1)
 [resource]
 default_font = ExtResource("3_fbfxl")
 default_font_size = 6
-Button/styles/disabled = SubResource("StyleBoxFlat_r8u4k")
+Button/styles/disabled = null
 Button/styles/focus = SubResource("StyleBoxEmpty_dmy1r")
 Button/styles/hover = ExtResource("1_lro6f")
 Button/styles/normal = ExtResource("1_cof14")

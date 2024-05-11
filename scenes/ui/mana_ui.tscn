@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnbwu7pkbrwox"]
 
-[ext_resource type="Theme" uid="uid://c8cqncsqlplyu" path="res://main_theme.tres" id="1_g26dn"]
 [ext_resource type="Script" path="res://scenes/ui/mana_ui.gd" id="2_wmp1w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vfw7h"]
+load_path = "res://.godot/imported/Mana 3.png-32a5d46f9a4eb20d6a9e6639868e9a50.ctex"
 
 [node name="ManaUI" type="Panel"]
 anchors_preset = 2
@@ -12,10 +14,11 @@ offset_top = -24.0
 offset_right = 24.0
 offset_bottom = -6.0
 grow_vertical = 0
-theme = ExtResource("1_g26dn")
+scale = Vector2(1.00173, 1)
 script = ExtResource("2_wmp1w")
 
 [node name="ManaLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,9 +29,12 @@ text = "3/3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ManaIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = -21.0
-offset_right = 60.0
-offset_bottom = 19.0
+offset_left = -1.99655
+offset_top = -1.0
+offset_right = 79.0034
+offset_bottom = 67.0
+scale = Vector2(0.271817, 0.294604)
+texture = SubResource("CompressedTexture2D_vfw7h")
+expand_mode = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnf4nkps0t7e1"]
 
 [ext_resource type="Script" path="res://scenes/map/map_room.gd" id="1_82ug5"]
-[ext_resource type="Texture2D" uid="uid://c76fc4up17o0e" path="res://scenes/map/sprint logo.png" id="2_pllyc"]
+[ext_resource type="Texture2D" uid="uid://nr6sprxaygjh" path="res://art/SprintLogo.png" id="2_xsm8u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2n2wc"]
 
@@ -138,7 +138,7 @@ default_color = Color(0.529412, 0.529412, 0.529412, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 position = Vector2(0.600006, -0.649998)
 scale = Vector2(0.0362934, 0.0387967)
-texture = ExtResource("2_pllyc")
+texture = ExtResource("2_xsm8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2n2wc")

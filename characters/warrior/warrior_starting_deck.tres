@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://dyyfi3rcfxyug"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://dyyfi3rcfxyug"]
 
 [ext_resource type="Resource" uid="uid://btxc1odh1jmst" path="res://characters/warrior/cards/sdl1.tres" id="1_8s2m3"]
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_ncslu"]
-[ext_resource type="Resource" uid="uid://n3va254ct6b3" path="res://characters/warrior/cards/asr_sdl3_duplicatetest.tres" id="2_k2qmp"]
 [ext_resource type="Resource" uid="uid://d4c8yfl4f4sat" path="res://characters/warrior/cards/sdl2.tres" id="3_eatkn"]
 [ext_resource type="Resource" uid="uid://bs60rw1pl2jmg" path="res://characters/warrior/cards/sdl4.tres" id="4_mdc1u"]
+[ext_resource type="Resource" uid="uid://dmve340gkhhv0" path="res://characters/warrior/cards/us1.tres" id="5_2skhc"]
+[ext_resource type="Resource" uid="uid://buxnsmrdea18w" path="res://characters/warrior/cards/us2.tres" id="6_obup1"]
+[ext_resource type="Resource" uid="uid://e83xq1knrrqs" path="res://characters/warrior/cards/sdl3.tres" id="7_6r07d"]
+[ext_resource type="Resource" uid="uid://b7sov7rdtkt7o" path="res://characters/warrior/cards/us3.tres" id="7_b6ods"]
 
 [resource]
 script = ExtResource("1_ncslu")
-cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_8s2m3"), ExtResource("1_8s2m3"), ExtResource("1_8s2m3"), ExtResource("1_8s2m3"), ExtResource("2_k2qmp"), ExtResource("3_eatkn"), ExtResource("3_eatkn"), ExtResource("3_eatkn"), ExtResource("3_eatkn"), ExtResource("4_mdc1u")])
+cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_8s2m3"), ExtResource("1_8s2m3"), ExtResource("3_eatkn"), ExtResource("3_eatkn"), ExtResource("4_mdc1u"), ExtResource("5_2skhc"), ExtResource("6_obup1"), ExtResource("7_b6ods"), ExtResource("7_6r07d")])

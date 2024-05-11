@@ -4,10 +4,13 @@
 [ext_resource type="Script" path="res://scenes/ui/health_ui.gd" id="1_adloa"]
 
 [node name="HealthUI" type="HBoxContainer"]
+offset_right = 34.0
+offset_bottom = 12.0
 theme_override_constants/separation = 2
 script = ExtResource("1_adloa")
 
 [node name="HealthImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 texture = ExtResource("1_66855")
 stretch_mode = 5
@@ -16,6 +19,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
 text = "14"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -24,5 +28,6 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
 text = "/35"
 vertical_alignment = 1

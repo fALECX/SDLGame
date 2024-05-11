@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2kif87udda37"]
+[gd_scene load_steps=11 format=3 uid="uid://c2kif87udda37"]
 
 [ext_resource type="Script" path="res://tutorial_scene_6.gd" id="1_q3qji"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_tq7jp"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_7k53w"]
 [ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_45v1i"]
 [ext_resource type="Texture2D" uid="uid://cijn254i681ol" path="res://art/CardRewards.png" id="3_odaaa"]
 [ext_resource type="Texture2D" uid="uid://bh0nd2auoc6ec" path="res://art/CardRewardTooltip.png" id="4_nyfgn"]
@@ -74,6 +75,16 @@ offset_bottom = 133.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
 text = "Weiter"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
+show_behind_parent = true
+offset_right = 35.0
+offset_bottom = 16.0
+texture = ExtResource("2_7k53w")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [node name="SdlPractice" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_8wmhx")
