@@ -6,6 +6,8 @@ var minimum_drag_time_elapsed := false
 
 
 func enter() -> void:
+	print("card dragging entered")
+
 	var ui_layer := get_tree().get_first_node_in_group("ui_layer")
 	if ui_layer:
 		card_ui.reparent(ui_layer)
@@ -16,6 +18,9 @@ func enter() -> void:
 	minimum_drag_time_elapsed = false
 	var threshold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)
+	#edited, tooltip verschwindet bei allen states ausser base
+
+	Events.tooltip_hide_requested.emit()
 
 
 func exit() -> void:

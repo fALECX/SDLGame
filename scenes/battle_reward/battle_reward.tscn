@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb4xo4pwrm8r8"]
+[gd_scene load_steps=13 format=3 uid="uid://bb4xo4pwrm8r8"]
 
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_h878h"]
 [ext_resource type="Script" path="res://custom_resources/run_stats.gd" id="2_udvhp"]
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="2_ypkif"]
 [ext_resource type="PackedScene" uid="uid://bibn5odjy7ko0" path="res://scenes/ui/reward_button.tscn" id="3_mwu8a"]
 [ext_resource type="Resource" uid="uid://sbkc4o401k4l" path="res://characters/warrior/warrior.tres" id="3_q4mom"]
 [ext_resource type="Texture2D" uid="uid://cpmy5std4fafh" path="res://art/rarity.png" id="4_ibeje"]
+[ext_resource type="Texture2D" uid="uid://smvx15ubrrad" path="res://art/Background Office.jpg" id="4_ywy6l"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="6_8ma8t"]
 [ext_resource type="PackedScene" uid="uid://cduitbid2yqlr" path="res://scenes/ui/card_rewards.tscn" id="6_tq7ug"]
+[ext_resource type="Script" path="res://scenes/battle_reward/WrongCardPopup.gd" id="9_cd5s0"]
 
 [sub_resource type="Resource" id="Resource_ndagj"]
 script = ExtResource("2_udvhp")
@@ -34,19 +36,13 @@ script = ExtResource("1_h878h")
 run_stats = SubResource("Resource_ndagj")
 character_stats = ExtResource("3_q4mom")
 
-[node name="Background" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_ypkif")
-expand_mode = 1
-stretch_mode = 5
+[node name="BackgroundOffice" type="Sprite2D" parent="."]
+position = Vector2(129.5, 72)
+scale = Vector2(0.160077, 0.144898)
+texture = ExtResource("4_ywy6l")
 
 [node name="BackgroundDimmer" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.552941)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,20 +58,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -63.0
-offset_right = 121.0
-offset_bottom = 65.0
+offset_left = -88.0
+offset_top = -55.0
+offset_right = 93.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "set sprint %"
 label_settings = SubResource("LabelSettings_eu6ly")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
@@ -101,11 +112,35 @@ layout_mode = 2
 reward_icon = ExtResource("4_ibeje")
 reward_text = "Add New Card"
 
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/RewardContainer"]
+visible = false
+show_behind_parent = true
+layout_mode = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Continue"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/BackButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="CardRewards" parent="." instance=ExtResource("6_tq7ug")]
 unique_name_in_owner = true
@@ -113,4 +148,92 @@ visible = false
 layout_mode = 1
 rewards = Array[Resource("res://custom_resources/card.gd")]([])
 
+[node name="WrongCardPopup" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("9_cd5s0")
+
+[node name="BackgroundDimmer" type="ColorRect" parent="WrongCardPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="WrongCardPopup"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 35.0
+offset_right = -25.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="WrongCardText" type="RichTextLabel" parent="WrongCardPopup"]
+unique_name_in_owner = true
+offset_left = 29.0
+offset_top = 40.0
+offset_right = 227.0
+offset_bottom = 114.0
+bbcode_enabled = true
+text = "DASDASDASD"
+
+[node name="WrongCardTitle" type="Label" parent="WrongCardPopup"]
+unique_name_in_owner = true
+offset_left = 25.0
+offset_top = 11.0
+offset_right = 232.0
+offset_bottom = 19.0
+text = "Sprint % - Falsche karte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="WrongCardPopup/WrongCardTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -2.0
+offset_right = -54.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="BackButton" type="Button" parent="WrongCardPopup"]
+offset_left = 190.0
+offset_top = 124.0
+offset_right = 250.0
+offset_bottom = 136.0
+text = "Ich machs besser..."
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="WrongCardPopup/BackButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ma8t")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="WrongCardPopup/BackButton" to="WrongCardPopup" method="_on_back_button_pressed"]

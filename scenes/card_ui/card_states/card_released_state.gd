@@ -4,12 +4,17 @@ var played: bool
 
 
 func enter() -> void:
+	print("card released entered")
+
 	played = false
 	
 	if not card_ui.targets.is_empty():
 		Events.tooltip_hide_requested.emit()
 		played = true
 		card_ui.play()
+	#edited, tooltip verschwindet bei allen states ausser base
+
+	Events.tooltip_hide_requested.emit()
 
 
 func on_input(_event: InputEvent) -> void:

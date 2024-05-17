@@ -23,6 +23,7 @@ const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 @onready var relic_tooltip: RelicTooltip = %RelicTooltip
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var topbar = $TopBar
+@onready var sprint = $Sprint
 
 var stats: RunStats
 var character: CharacterStats
@@ -32,10 +33,13 @@ var save_data: SaveGame
 func _ready() -> void:
 	if character:
 		_start_run()
-
+	sprint.show()
 	pause_menu.save_and_quit.connect(func(): get_tree().change_scene_to_packed(MAIN_MENU_SCENE))
 	_initialize_run()
-
+	#Event wenn erste Mal die Szene geladen wird, floors climbed = 0
+	print("floors changed emit aus ready - run.gd")
+	print(floors_climbed_run)
+	Events.floor_changed.emit(floors_climbed_run)
 
 func _initialize_run() -> void:
 	if not run_init_data:
@@ -123,7 +127,7 @@ func _setup_top_bar() -> void:
 func _show_map() -> void:
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
-
+	sprint.show()
 	map.show_map()
 	map.unlock_next_rooms()
 	_save_run()
@@ -139,6 +143,7 @@ func _setup_event_connections() -> void:
 
 #added function to show floors climbed
 func _show_regular_battle_rewards() -> void:
+
 	#hide top bar, muss noch implementiert werden, dass sie danach wieder kommt 26.04.2024
 	#%TopBar.hide()
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -147,7 +152,9 @@ func _show_regular_battle_rewards() -> void:
 	reward_scene.relic_handler = relic_handler
 	print(floors_climbed(), "floors climbed from battle rewards")
 	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
-	reward_scene.add_card_reward()
+	print("floors changed emit aus show regular battle rewards - run.gd")
+	print(floors_climbed_run)
+	Events.floor_changed.emit(floors_climbed_run)
 
 
 func floors_climbed() -> int:
@@ -156,7 +163,10 @@ func floors_climbed() -> int:
 
 
 func  _on_battle_room_entered(room: Room) -> void:
+
 	print(floors_climbed(), "  floors climbed from battle room entered")
+	#Events.floor_changed.connect(character_stats._on_floor_changed)
+
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
 	battle_scene.battle_stats = room.battle_stats
@@ -184,6 +194,8 @@ func _on_battle_won() -> void:
 		win_screen.character = character
 		SaveGame.delete_data()
 	else:
+		#edited dass event signal emitted wird, dass anzeigt dass floor besiegt wurde und somit rewards aus dem array des spezifischen sprints ausgegeben werden
+		Events.change_cards.emit(floors_climbed_run)
 		_show_regular_battle_rewards()
 
 

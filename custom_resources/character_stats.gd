@@ -19,6 +19,19 @@ var discard: CardPile
 var draw_pile: CardPile
 
 
+func _ready() -> void:
+	print("ready aus char stats wird aufgerufen")
+
+
+func _on_floor_changed(floor: int) -> void:
+	print("aus character stats: floor changed aufgerufen")
+	if(floor == 1):
+		print("array verändert")
+		draftable_cards = load("res://characters/warrior/warrior_draftable_cards_sprint1.tres")
+	else:
+		print("kein array verändert")
+		pass
+
 func set_mana(value: int) -> void:
 	mana = value
 	stats_changed.emit()

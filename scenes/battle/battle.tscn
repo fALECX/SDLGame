@@ -38,7 +38,6 @@ music = ExtResource("3_nuoky")
 metadata/_edit_lock_ = true
 
 [node name="BattleBackgroundv1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(129.25, 72)
 scale = Vector2(0.257324, 0.144531)
 texture = ExtResource("5_7pyls")
@@ -110,17 +109,6 @@ offset_top = 3.0
 offset_right = 97.0
 offset_bottom = 37.0
 
-[node name="BackgroundNineRect" type="NinePatchRect" parent="BattleUI"]
-offset_left = 221.0
-offset_top = 113.0
-offset_right = 250.0
-offset_bottom = 123.0
-texture = ExtResource("17_vj2n2")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
 anchors_preset = 3
@@ -137,6 +125,20 @@ grow_vertical = 0
 theme = ExtResource("13_523u4")
 disabled = true
 text = "End Turn"
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="BattleUI/EndTurnButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_vj2n2")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="DrawPileButton" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("17_8fteu")]
 unique_name_in_owner = true
@@ -267,3 +269,5 @@ layer = 4
 
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("24_gocfp")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://btoadxo20jn4"]
+[gd_scene load_steps=17 format=3 uid="uid://btoadxo20jn4"]
 
 [ext_resource type="Script" path="res://scenes/run/run.gd" id="1_y8ss3"]
 [ext_resource type="Resource" uid="uid://db6tb870t0lae" path="res://scenes/run/run_init_data.tres" id="2_evlyb"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ib5rv5vo4epg" path="res://art/Deckpile.png" id="8_ui5sg"]
 [ext_resource type="PackedScene" uid="uid://8f3j8enkvdko" path="res://scenes/relic_handler/relic_tooltip.tscn" id="9_34cmp"]
 [ext_resource type="Script" path="res://scenes/run/pause_menu.gd" id="10_gnqne"]
+[ext_resource type="Script" path="res://scenes/run/SprintScreen.gd" id="12_pxqhw"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="13_8vchp"]
 
 [sub_resource type="Gradient" id="Gradient_lhw2h"]
 colors = PackedColorArray(0.215902, 0.215902, 0.215902, 1, 0.4, 0.220333, 0.204, 1)
@@ -24,6 +26,7 @@ width = 50
 [node name="Run" type="Node"]
 script = ExtResource("1_y8ss3")
 run_init_data = ExtResource("2_evlyb")
+floors_climbed_run = null
 
 [node name="Map" parent="." instance=ExtResource("2_rq6d4")]
 
@@ -74,7 +77,6 @@ show_max_hp = true
 
 [node name="GoldUI" parent="TopBar/HBoxContainer/Stats" instance=ExtResource("5_ybtdt")]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
@@ -179,3 +181,76 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Main Menu"
+
+[node name="Sprint" type="CanvasLayer" parent="."]
+layer = 5
+script = ExtResource("12_pxqhw")
+
+[node name="ColorRect" type="ColorRect" parent="Sprint"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.721569)
+
+[node name="BackgroundNineRect2" type="NinePatchRect" parent="Sprint"]
+modulate = Color(1, 1, 1, 0.827451)
+show_behind_parent = true
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 251.0
+offset_bottom = 135.0
+texture = ExtResource("13_8vchp")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprint"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="SprintTitle" type="RichTextLabel" parent="Sprint/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "asd"
+fit_content = true
+scroll_active = false
+
+[node name="SprintText" type="RichTextLabel" parent="Sprint/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "asdasd"
+fit_content = true
+tab_size = 1
+context_menu_enabled = true
+
+[node name="BackToGame" type="Button" parent="Sprint"]
+unique_name_in_owner = true
+offset_left = 202.0
+offset_top = 120.0
+offset_right = 247.0
+offset_bottom = 128.0
+text = "Zum Sprint..."
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="Sprint/BackToGame"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 11.0
+texture = ExtResource("13_8vchp")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8

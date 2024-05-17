@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://art/tile_0086.png" id="2_7b48t"]
 [ext_resource type="Resource" uid="uid://kur3yjtlceu0" path="res://relics/coupons.tres" id="2_krdu0"]
 [ext_resource type="PackedScene" uid="uid://dnn8bphgvyckb" path="res://scenes/shop/shop_card.tscn" id="3_2jjnr"]
-[ext_resource type="Resource" uid="uid://cgte4s6aec68k" path="res://characters/warrior/cards/sdl5.tres" id="4_vo0n1"]
+[ext_resource type="Resource" uid="uid://cgte4s6aec68k" path="res://characters/warrior/cards/sdl5rare.tres" id="4_vo0n1"]
 [ext_resource type="Resource" uid="uid://n3va254ct6b3" path="res://characters/warrior/cards/asr_sdl3_duplicatetest.tres" id="5_kpe2e"]
 [ext_resource type="Resource" uid="uid://bs2avd7k0xgfx" path="res://characters/warrior/cards/qualitygates_sdl3.tres" id="6_lfpr4"]
 [ext_resource type="Texture2D" uid="uid://mpuy1wgjgh1" path="res://art/shopkeeper_blink.png" id="7_3tqiv"]

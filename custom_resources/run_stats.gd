@@ -4,8 +4,9 @@ extends Resource
 signal gold_changed
 signal sprint_changed
 
-const STARTING_GOLD := 70
-const BASE_CARD_REWARDS := 3
+const STARTING_GOLD := 0
+#karten rewards, 15.05.2024 fest auf 5 da CardPile Karten Array somit 2 richtige und 3 falsche anzeigen kann - benötigt für implementation des picken der falschen Karte
+const BASE_CARD_REWARDS := 5
 const BASE_COMMON_WEIGHT := 6.0
 const BASE_UNCOMMON_WEIGHT := 3.7
 const BASE_RARE_WEIGHT := 0.3

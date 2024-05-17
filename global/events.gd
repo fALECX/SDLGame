@@ -9,6 +9,7 @@ signal card_played(card: Card)
 signal card_tooltip_requested(card: Card)
 signal tooltip_hide_requested
 
+
 # Player-related events
 signal player_hand_drawn
 signal player_hand_discarded
@@ -26,6 +27,7 @@ signal status_tooltip_requested(statuses: Array[Status])
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
 signal floor_changed
+signal change_cards
 
 # Map-related events
 signal map_exited(room: Room)
@@ -41,7 +43,7 @@ signal campfire_exited
 
 # Battle Reward-related events
 signal battle_reward_exited
-
+signal card_taken
 # Treasure Room & Relic-related events
 signal treasure_room_exited(relic: Relic)
 signal relic_tooltip_requested(relic: Relic)

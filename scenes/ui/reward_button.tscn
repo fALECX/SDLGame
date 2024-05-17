@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bibn5odjy7ko0"]
+[gd_scene load_steps=4 format=3 uid="uid://bibn5odjy7ko0"]
 
 [ext_resource type="Script" path="res://scenes/ui/reward_button.gd" id="1_nfnsd"]
 [ext_resource type="Texture2D" uid="uid://cpmy5std4fafh" path="res://art/rarity.png" id="2_dgs0q"]
+[ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="3_oksig"]
 
 [node name="RewardButton" type="Button"]
 custom_minimum_size = Vector2(75, 14)
@@ -42,5 +43,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Kundenzufriedenheit / Neue Karte"
 vertical_alignment = 1
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_oksig")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://dpmgf25dwoaua"]
 
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_e5g4d"]
-[ext_resource type="Resource" uid="uid://btxc1odh1jmst" path="res://characters/warrior/cards/sdl1.tres" id="1_xsuuh"]
-[ext_resource type="Resource" uid="uid://d4c8yfl4f4sat" path="res://characters/warrior/cards/sdl2.tres" id="2_1nhu1"]
+[ext_resource type="Resource" uid="uid://btxc1odh1jmst" path="res://characters/warrior/cards/sdl1common.tres" id="1_xsuuh"]
+[ext_resource type="Resource" uid="uid://d4c8yfl4f4sat" path="res://characters/warrior/cards/sdl2common.tres" id="2_1nhu1"]
 [ext_resource type="Resource" uid="uid://n3va254ct6b3" path="res://characters/warrior/cards/asr_sdl3_duplicatetest.tres" id="3_ar5fl"]
-[ext_resource type="Resource" uid="uid://cgte4s6aec68k" path="res://characters/warrior/cards/sdl5.tres" id="4_m571l"]
+[ext_resource type="Resource" uid="uid://cgte4s6aec68k" path="res://characters/warrior/cards/sdl5rare.tres" id="4_m571l"]
 [ext_resource type="Resource" uid="uid://bs2avd7k0xgfx" path="res://characters/warrior/cards/qualitygates_sdl3.tres" id="5_tpwvk"]
 
 [resource]

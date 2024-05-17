@@ -4,6 +4,8 @@ var card_ui_hovered := false
 
 
 func enter() -> void:
+	print("card base entered")
+
 	if not card_ui.is_node_ready():
 		await card_ui.ready
 
@@ -13,6 +15,8 @@ func enter() -> void:
 	card_ui.panel.set("theme_override_styles/panel", card_ui.BASE_STYLEBOX)
 	card_ui.reparent_requested.emit(card_ui)
 	card_ui.pivot_offset = Vector2.ZERO
+	#edited, tooltip verschwindet bei allen states ausser base
+
 	Events.tooltip_hide_requested.emit()
 
 

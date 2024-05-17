@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6uus0vr6amco"]
 
-[ext_resource type="Texture2D" uid="uid://blkrjt7i0gndg" path="res://art/gold.png" id="1_6h0yr"]
 [ext_resource type="Script" path="res://scenes/ui/gold_ui.gd" id="1_7gmjv"]
+[ext_resource type="Texture2D" uid="uid://q448yiyvee5d" path="res://art/Customer Satisfaction.png" id="2_47wfi"]
 
 [node name="GoldUI" type="HBoxContainer"]
 offset_left = 3.0
@@ -14,7 +14,7 @@ script = ExtResource("1_7gmjv")
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("1_6h0yr")
+texture = ExtResource("2_47wfi")
 expand_mode = 1
 stretch_mode = 5
 
