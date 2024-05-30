@@ -47,7 +47,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Discard Pile"
+text = "Kartendeck"
 label_settings = SubResource("LabelSettings_gcrwt")
 horizontal_alignment = 1
 

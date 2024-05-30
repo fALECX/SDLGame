@@ -12,14 +12,35 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var status_handler: StatusHandler = $StatusHandler
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var collisionshape: CollisionShape2D = $CollisionShape2D
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
-
+var floors_climbed: int = 0
 
 func _ready() -> void:
 	status_handler.status_owner = self
+	Events.get_floors.emit()
+	Events.send_floors.connect(set_floors_climbed)
+	print("floors_climbed from enemy.gd: ", floors_climbed)
+	if(floors_climbed == 0):
+		collisionshape.scale = Vector2(5,5)
+		stats_ui.scale = Vector2(2,2)
+		stats_ui.position = Vector2(-150, 0)
+		intent_ui.position = Vector2(-85,-100)
 
+
+func set_floors_climbed(value: int) -> void:
+	print("floors_climbed from enemy: ", value)
+	floors_climbed = value
+	#set_enemy_size(value)
+
+	#skalierung von ui und sprite hide wenn sprint 1 (skype szene)
+func set_enemy_size(value: int) -> void:
+	print(value)
+	if(value == 1):
+		stats_ui.scale = Vector2(2,2)
+		intent_ui.position = Vector2(75,-65)
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value

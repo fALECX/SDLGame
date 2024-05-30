@@ -190,7 +190,7 @@ position = Vector2(128.5, 72.5)
 scale = Vector2(0.40155, 0.34507)
 sprite_frames = SubResource("SpriteFrames_eyb54")
 autoplay = "default"
-frame_progress = 0.768261
+frame_progress = 0.97025
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

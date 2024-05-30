@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://b4b3e0d14kvmi" path="res://scenes/card_ui/card_base_stylebox.tres" id="1_cof14"]
 [ext_resource type="StyleBox" uid="uid://15046auw6h2r" path="res://scenes/card_ui/card_hover_stylebox.tres" id="1_lro6f"]
-[ext_resource type="FontFile" uid="uid://dscd8kstg31g5" path="res://ShylockNbpRegular-zjE1.ttf" id="3_fbfxl"]
+[ext_resource type="FontFile" uid="uid://dqw8l0kqsqvmf" path="res://TakeItEasy-qJ1d.ttf" id="3_tamyt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmy1r"]
 
@@ -15,7 +15,7 @@ border_width_bottom = 1
 border_color = Color(0.615686, 0.576471, 0.282353, 1)
 
 [resource]
-default_font = ExtResource("3_fbfxl")
+default_font = ExtResource("3_tamyt")
 default_font_size = 6
 Button/styles/disabled = null
 Button/styles/focus = SubResource("StyleBoxEmpty_dmy1r")

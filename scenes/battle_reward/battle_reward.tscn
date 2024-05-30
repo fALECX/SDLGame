@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb4xo4pwrm8r8"]
+[gd_scene load_steps=12 format=3 uid="uid://bb4xo4pwrm8r8"]
 
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_h878h"]
 [ext_resource type="Script" path="res://custom_resources/run_stats.gd" id="2_udvhp"]
 [ext_resource type="PackedScene" uid="uid://bibn5odjy7ko0" path="res://scenes/ui/reward_button.tscn" id="3_mwu8a"]
 [ext_resource type="Resource" uid="uid://sbkc4o401k4l" path="res://characters/warrior/warrior.tres" id="3_q4mom"]
 [ext_resource type="Texture2D" uid="uid://cpmy5std4fafh" path="res://art/rarity.png" id="4_ibeje"]
-[ext_resource type="Texture2D" uid="uid://smvx15ubrrad" path="res://art/Background Office.jpg" id="4_ywy6l"]
+[ext_resource type="Texture2D" uid="uid://do6uw7ha472yw" path="res://art/BackgroundOfficeRewards.png" id="4_lwas7"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="6_8ma8t"]
 [ext_resource type="PackedScene" uid="uid://cduitbid2yqlr" path="res://scenes/ui/card_rewards.tscn" id="6_tq7ug"]
 [ext_resource type="Script" path="res://scenes/battle_reward/WrongCardPopup.gd" id="9_cd5s0"]
@@ -21,9 +21,6 @@ rare_weight = 0.3
 [sub_resource type="LabelSettings" id="LabelSettings_eu6ly"]
 font_size = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glrc5"]
-bg_color = Color(0, 0, 0, 0.501961)
-
 [node name="BattleReward" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,110 +34,86 @@ run_stats = SubResource("Resource_ndagj")
 character_stats = ExtResource("3_q4mom")
 
 [node name="BackgroundOffice" type="Sprite2D" parent="."]
-position = Vector2(129.5, 72)
-scale = Vector2(0.160077, 0.144898)
-texture = ExtResource("4_ywy6l")
+position = Vector2(129.481, 75.8553)
+scale = Vector2(0.257039, 0.266063)
+texture = ExtResource("4_lwas7")
 
 [node name="BackgroundDimmer" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.552941)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 3.0
+offset_right = -39.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = -55.0
-offset_right = 93.0
-offset_bottom = 59.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 3
-
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 100.0
+offset_top = 5.0
+offset_right = 159.0
+offset_bottom = 19.0
 text = "set sprint %"
 label_settings = SubResource("LabelSettings_eu6ly")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/Label"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_8ma8t")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_glrc5")
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/RewardContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="Rewards" type="VBoxContainer" parent="VBoxContainer/RewardContainer/MarginContainer"]
+[node name="Rewards" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 96.0
+offset_top = 33.0
+offset_right = 173.0
+offset_bottom = 76.0
 
-[node name="GoldReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_mwu8a")]
+[node name="GoldReward" parent="Rewards" instance=ExtResource("3_mwu8a")]
 layout_mode = 2
 
-[node name="CardReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_mwu8a")]
+[node name="CardReward" parent="Rewards" instance=ExtResource("3_mwu8a")]
 layout_mode = 2
 reward_icon = ExtResource("4_ibeje")
 reward_text = "Add New Card"
 
-[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/RewardContainer"]
-visible = false
-show_behind_parent = true
-layout_mode = 2
-texture = ExtResource("6_8ma8t")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 3.0
+offset_right = 218.0
+offset_bottom = 43.0
+theme_override_constants/separation = 45
 
-[node name="BackButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(50, 14)
+[node name="Backlog3" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Done"
+
+[node name="Backlog2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Work in Progress"
+
+[node name="Backlog" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Backlog"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 174.0
+offset_top = 83.0
+offset_right = 214.0
+offset_bottom = 90.0
 size_flags_horizontal = 4
-text = "Continue"
-
-[node name="BackgroundNineRect" type="NinePatchRect" parent="VBoxContainer/BackButton"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_8ma8t")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+theme_override_font_sizes/font_size = 5
+text = "Sprint abschliessen
+"
 
 [node name="CardRewards" parent="." instance=ExtResource("6_tq7ug")]
 unique_name_in_owner = true
@@ -149,6 +122,7 @@ layout_mode = 1
 rewards = Array[Resource("res://custom_resources/card.gd")]([])
 
 [node name="WrongCardPopup" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 visible = false
 script = ExtResource("9_cd5s0")
 
@@ -215,6 +189,7 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="BackButton" type="Button" parent="WrongCardPopup"]
+unique_name_in_owner = true
 offset_left = 190.0
 offset_top = 124.0
 offset_right = 250.0
@@ -235,5 +210,4 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="WrongCardPopup/BackButton" to="WrongCardPopup" method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -16,6 +16,8 @@ signal player_hand_discarded
 signal player_turn_ended
 signal player_hit
 signal player_died
+signal hide_player
+signal show_player
 
 # Enemy-related events
 signal enemy_died(enemy: Enemy)
@@ -26,8 +28,10 @@ signal enemy_turn_ended
 signal status_tooltip_requested(statuses: Array[Status])
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
-signal floor_changed
+signal floor_changed(floor: int)
 signal change_cards
+signal get_floors
+signal send_floors(floor: int)
 
 # Map-related events
 signal map_exited(room: Room)
@@ -38,6 +42,7 @@ signal shop_relic_bought(relic: Relic, gold_cost: int)
 signal shop_card_bought(card: Card, gold_cost: int)
 signal shop_exited
 
+
 # Campfire-related events
 signal campfire_exited
 
@@ -47,3 +52,7 @@ signal card_taken
 # Treasure Room & Relic-related events
 signal treasure_room_exited(relic: Relic)
 signal relic_tooltip_requested(relic: Relic)
+
+# Menu-related events
+signal desk_exited
+signal sprint_info_exited

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cahno8aso5net"]
+[gd_scene load_steps=28 format=3 uid="uid://cahno8aso5net"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_4s751"]
 [ext_resource type="PackedScene" uid="uid://d0efyathkfg74" path="res://scenes/enemy/enemy.tscn" id="2_02s5s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://sbkc4o401k4l" path="res://characters/warrior/warrior.tres" id="4_fwb8a"]
 [ext_resource type="Resource" uid="uid://bnmpwl3k8qb8n" path="res://enemies/crab/crab_enemy.tres" id="5_5flmk"]
 [ext_resource type="Texture2D" uid="uid://b1kmqm3v2u8m7" path="res://art/BattleBackgroundv1.jpeg" id="5_7pyls"]
+[ext_resource type="Texture2D" uid="uid://b0o5mdisgunp5" path="res://art/skypebattle1 (2).png" id="6_6khi1"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_18vit"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_3di7i"]
 [ext_resource type="Resource" uid="uid://bbo24od4aavfj" path="res://enemies/bat/bat_enemy.tres" id="8_d4c2d"]
@@ -38,9 +39,15 @@ music = ExtResource("3_nuoky")
 metadata/_edit_lock_ = true
 
 [node name="BattleBackgroundv1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(129.25, 72)
 scale = Vector2(0.257324, 0.144531)
 texture = ExtResource("5_7pyls")
+
+[node name="Skypebattle1" type="Sprite2D" parent="."]
+position = Vector2(128, 72)
+scale = Vector2(0.364672, 0.2304)
+texture = ExtResource("6_6khi1")
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -51,6 +58,7 @@ shape = SubResource("RectangleShape2D_xyg5u")
 debug_color = Color(0, 0.6, 0.701961, 0.117647)
 
 [node name="EnemyHandler" type="Node2D" parent="."]
+position = Vector2(-3, 0)
 script = ExtResource("4_41vpn")
 
 [node name="BatEnemy" parent="EnemyHandler" instance=ExtResource("2_02s5s")]
@@ -67,7 +75,7 @@ position = Vector2(234, 62)
 stats = ExtResource("8_d4c2d")
 
 [node name="Player" parent="." instance=ExtResource("3_dpj45")]
-position = Vector2(45, 69)
+position = Vector2(63, 60)
 stats = ExtResource("4_fwb8a")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_vyv1n")]

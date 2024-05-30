@@ -11,14 +11,37 @@ extends Node2D
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var player: Player = $Player
 
+var floors_climbed := 0
 
 func _ready() -> void:
+	print("ready aus battle.gd aufgerufen")
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
-	
+
+	Events.send_floors.connect(floors_climbed_update)
+	Events.floor_changed.connect(floors_climbed_changed)
+
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
+
+	Events.get_floors.emit()
+	print("floors from battle.gd: ", floors_climbed)
+
+
+func floors_climbed_update(floors :int) -> void:
+	print("send_floors connect von battle.gd aufgerufen: ", floors)
+	floors_climbed = floors
+	if(floors_climbed == 1):
+		print("Hide player emit from floors_climbed_changed from battle.gd")
+		Events.hide_player.emit()
+	else:
+		print("Show player emit from floors_climbed_changed from battle.gd")
+		Events.show_player.emit()
+
+func floors_climbed_changed(floors_given: int) -> void:
+	print("Floor changed from battle.gd: ", floors_given)
+	floors_climbed = floors_given
 
 
 func start_battle() -> void:

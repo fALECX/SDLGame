@@ -1,25 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgv2atk5gusnu"]
 
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/heart.png" id="1_66855"]
 [ext_resource type="Script" path="res://scenes/ui/health_ui.gd" id="1_adloa"]
+[ext_resource type="Texture2D" uid="uid://r3axhvkea6xq" path="res://art/Project Hearts.png" id="2_dahqu"]
 
 [node name="HealthUI" type="HBoxContainer"]
-offset_right = 34.0
-offset_bottom = 12.0
+offset_right = 26.0
+offset_bottom = 9.0
 theme_override_constants/separation = 2
 script = ExtResource("1_adloa")
 
 [node name="HealthImage" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(15, 15)
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
-texture = ExtResource("1_66855")
+texture = ExtResource("2_dahqu")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "14"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -28,6 +29,6 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "/35"
 vertical_alignment = 1

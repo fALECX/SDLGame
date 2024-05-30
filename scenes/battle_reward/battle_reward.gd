@@ -188,6 +188,7 @@ func _on_card_reward_taken(card: Card) -> void:
 	cards_taken += 1
 
 	#Karte wurde gepickt und potentielle negative Effekte wurden ausgelöst und angezeigt -> WrongCardPopup.gd
+	print("aus battle_reward.gd: Karte wurde gepickt und potentielle negative Effekte wurden ausgelöst und angezeigt")
 	Events.card_taken.emit(card)
 
 

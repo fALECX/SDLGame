@@ -11,6 +11,17 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
+func _ready() -> void:
+	Events.hide_player.connect(_hide_player)
+	Events.show_player.connect(_show_player)
+
+
+func _show_player() -> void:
+	$Sprite2D.visible = true
+
+func _hide_player() -> void:
+	$Sprite2D.visible = false
+
 func set_character_stats(value: CharacterStats) -> void:
 	stats = value
 	

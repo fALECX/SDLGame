@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_vjyut"]
 [ext_resource type="PackedScene" uid="uid://b33j64lkeq7i3" path="res://scenes/map/map_generator.tscn" id="2_5qslq"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="2_w0vvj"]
-[ext_resource type="Texture2D" uid="uid://bvsjtmt3d3o0o" path="res://art/BackgroundSprintmap.jpg" id="3_bxjxx"]
+[ext_resource type="Texture2D" uid="uid://kygx55urtpgi" path="res://art/SprintBackgroundNew.png" id="3_5hnva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpxpe"]
 shader = ExtResource("2_w0vvj")
@@ -11,13 +11,14 @@ shader_parameter/line_color = Color(0.0470588, 0.0470588, 0.0588235, 1)
 shader_parameter/line_thickness = 2.13
 
 [node name="Map" type="Node2D"]
+position = Vector2(12, -94)
 script = ExtResource("1_vjyut")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_bpxpe")
-position = Vector2(128, -145.5)
-scale = Vector2(0.171018, 0.180122)
-texture = ExtResource("3_bxjxx")
+position = Vector2(136, -70)
+scale = Vector2(0.0256783, 0.0301498)
+texture = ExtResource("3_5hnva")
 
 [node name="Visuals" type="Node2D" parent="."]
 
@@ -27,10 +28,11 @@ unique_name_in_owner = true
 [node name="Rooms" type="Node2D" parent="Visuals"]
 unique_name_in_owner = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(128, 72)
-limit_top = -538
-limit_bottom = 80
-position_smoothing_speed = 36.0
-
 [node name="MapGenerator" parent="." instance=ExtResource("2_5qslq")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, 41)
+offset = Vector2(128, 72)
+limit_top = -680
+limit_bottom = -10
+position_smoothing_speed = 36.0

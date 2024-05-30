@@ -8,6 +8,8 @@ const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE = preload("res://scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
+const DESK_SCENE := preload("res://whole_desk.tscn")
+
 
 @export var run_init_data: RunInitData
 @export var save_game: SaveGame	#added for testing
@@ -24,7 +26,8 @@ const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var topbar = $TopBar
 @onready var sprint = $Sprint
-
+@onready var button: Button = %ReturnToDesk
+@onready var backgroundimage: CanvasLayer = $BackgroundImage
 var stats: RunStats
 var character: CharacterStats
 var save_data: SaveGame
@@ -37,9 +40,9 @@ func _ready() -> void:
 	pause_menu.save_and_quit.connect(func(): get_tree().change_scene_to_packed(MAIN_MENU_SCENE))
 	_initialize_run()
 	#Event wenn erste Mal die Szene geladen wird, floors climbed = 0
-	print("floors changed emit aus ready - run.gd")
-	print(floors_climbed_run)
+	print("1. floors changed emit aus ready - run.gd ", floors_climbed() )
 	Events.floor_changed.emit(floors_climbed_run)
+	Events.get_floors.connect(floors_climbed_no_return)
 
 func _initialize_run() -> void:
 	if not run_init_data:
@@ -107,7 +110,7 @@ func _change_view(scene: PackedScene) -> Node:
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
 	map.hide_map()
-	
+	backgroundimage.hide()
 	return new_view
 
 
@@ -125,11 +128,18 @@ func _setup_top_bar() -> void:
 	print("top bar setup fertig")
 
 func _show_map() -> void:
+	#visible da bei show_whole_desk die topbar auf visible=false gesetzt wird
+	%TopBar.visible=true
+
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 	sprint.show()
 	map.show_map()
-	map.unlock_next_rooms()
+	backgroundimage.show()
+	print(floors_climbed(), " floors climbed from show map in run.gd")
+	#da sonst unlock_next_rooms nicht funktioniert, da floors_climbed_run noch nicht >0 ist und somit vor erstem level bei aufrufen von whole_desk und zurück auf run_scene fehlermeldung kommt
+	if(floors_climbed()>0):
+		map.unlock_next_rooms()
 	_save_run()
 
 
@@ -139,31 +149,44 @@ func _setup_event_connections() -> void:
 	Events.campfire_exited.connect(_show_map)
 	Events.shop_exited.connect(_show_map)
 	Events.map_exited.connect(_on_map_exited)
+	Events.desk_exited.connect(_show_map)
+
 	Events.treasure_room_exited.connect(_on_treasure_room_exited)
 
 #added function to show floors climbed
 func _show_regular_battle_rewards() -> void:
 
-	#hide top bar, muss noch implementiert werden, dass sie danach wieder kommt 26.04.2024
-	#%TopBar.hide()
+
+	%TopBar.visible = false
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
-	print(floors_climbed(), "floors climbed from battle rewards")
+	print(floors_climbed(), "floors climbed from battle rewards in run.gd")
 	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	print("floors changed emit aus show regular battle rewards - run.gd")
 	print(floors_climbed_run)
+	#floors changed emit nach battle rewards plus nach erstem mal szene laden (_ready)
 	Events.floor_changed.emit(floors_climbed_run)
+
+
+func floors_climbed_no_return() -> void:
+	print("floors_climbed_no_return aufgerufen aus run.gd: floors: ", floors_climbed_run)
+	floors_climbed_run = map.floors_climbed
+	print("send floors emit aus floors_climbed_no_return in run.gd: floors: ", floors_climbed_run)
+	Events.send_floors.emit(floors_climbed_run)
 
 
 func floors_climbed() -> int:
 	floors_climbed_run = map.floors_climbed
+	Events.send_floors.emit(map.floors_climbed)
 	return map.floors_climbed
 
 
 func  _on_battle_room_entered(room: Room) -> void:
-
+	#var offset: Vector2 = Vector2(-100,-100)
+	#topbar.set_offset(offset)
+	topbar.visible = false
 	print(floors_climbed(), "  floors climbed from battle room entered")
 	#Events.floor_changed.connect(character_stats._on_floor_changed)
 
@@ -229,3 +252,7 @@ func _on_map_exited(room: Room) -> void:
 			_on_shop_entered()
 		Room.Type.BOSS:
 			_on_battle_room_entered(room)
+
+func _on_return_to_desk_pressed() -> void:
+	%TopBar.visible=false
+	_change_view(DESK_SCENE)
