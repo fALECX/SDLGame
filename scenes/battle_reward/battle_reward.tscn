@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb4xo4pwrm8r8"]
+[gd_scene load_steps=13 format=3 uid="uid://bb4xo4pwrm8r8"]
 
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_h878h"]
 [ext_resource type="Script" path="res://custom_resources/run_stats.gd" id="2_udvhp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://sbkc4o401k4l" path="res://characters/warrior/warrior.tres" id="3_q4mom"]
 [ext_resource type="Texture2D" uid="uid://cpmy5std4fafh" path="res://art/rarity.png" id="4_ibeje"]
 [ext_resource type="Texture2D" uid="uid://do6uw7ha472yw" path="res://art/BackgroundOfficeRewards.png" id="4_lwas7"]
+[ext_resource type="Texture2D" uid="uid://bkn3d3c3d38m6" path="res://art/DotGridBackground.png" id="5_4ee32"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="6_8ma8t"]
 [ext_resource type="PackedScene" uid="uid://cduitbid2yqlr" path="res://scenes/ui/card_rewards.tscn" id="6_tq7ug"]
 [ext_resource type="Script" path="res://scenes/battle_reward/WrongCardPopup.gd" id="9_cd5s0"]
@@ -37,6 +38,11 @@ character_stats = ExtResource("3_q4mom")
 position = Vector2(129.481, 75.8553)
 scale = Vector2(0.257039, 0.266063)
 texture = ExtResource("4_lwas7")
+
+[node name="DotGridBackground" type="Sprite2D" parent="."]
+position = Vector2(130, 49.25)
+scale = Vector2(0.0182971, 0.0163583)
+texture = ExtResource("5_4ee32")
 
 [node name="BackgroundDimmer" type="ColorRect" parent="."]
 visible = false
@@ -70,8 +76,8 @@ unique_name_in_owner = true
 layout_mode = 2
 offset_left = 96.0
 offset_top = 33.0
-offset_right = 173.0
-offset_bottom = 76.0
+offset_right = 185.0
+offset_bottom = 67.0
 
 [node name="GoldReward" parent="Rewards" instance=ExtResource("3_mwu8a")]
 layout_mode = 2

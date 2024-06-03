@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("1_d8ou5")
-character_name = "DB Character"
-description = "Kontrolleur der Deutschen Bahn"
+character_name = "Mr. Supercode"
+description = "Scrum Master bei Tag, Software Developer bei Nacht. Garantiert zu viel Koffein Intus."
 portrait = ExtResource("1_jr7sj")
 starting_deck = ExtResource("3_d68oj")
 draftable_cards = ExtResource("2_ah2ol")

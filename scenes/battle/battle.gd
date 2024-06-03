@@ -10,7 +10,14 @@ extends Node2D
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var player: Player = $Player
-
+@onready var battle_1: Sprite2D = $Battle1Skype
+@onready var battle_2: Sprite2D = $Battle2Office
+@onready var battle_3: Sprite2D = $Battle3Server
+@onready var battle_4: Sprite2D = $Battle4Server
+@onready var battle_5: Sprite2D = $Battle5Server
+@onready var battle_6: Sprite2D = $Battle6Server
+@onready var battle_7: Sprite2D = $Battle7Server
+@onready var backgroundcardgrid: Sprite2D = $BackgroundDotGridCards
 var floors_climbed := 0
 
 func _ready() -> void:
@@ -25,6 +32,7 @@ func _ready() -> void:
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
 
+	print("get_floors emit aus ready von batttle.gd")
 	Events.get_floors.emit()
 	print("floors from battle.gd: ", floors_climbed)
 
@@ -35,8 +43,31 @@ func floors_climbed_update(floors :int) -> void:
 	if(floors_climbed == 1):
 		print("Hide player emit from floors_climbed_changed from battle.gd")
 		Events.hide_player.emit()
-	else:
-		print("Show player emit from floors_climbed_changed from battle.gd")
+		battle_1.visible = true
+		backgroundcardgrid.visible = false
+	if(floors_climbed == 2):
+		backgroundcardgrid.visible = true
+		battle_2.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 3):
+		backgroundcardgrid.visible = true
+		battle_3.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 4):
+		backgroundcardgrid.visible = true
+		battle_4.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 5):
+		backgroundcardgrid.visible = true
+		battle_5.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 6):
+		backgroundcardgrid.visible = true
+		battle_6.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 7):
+		backgroundcardgrid.visible = true
+		battle_7.visible = true
 		Events.show_player.emit()
 
 func floors_climbed_changed(floors_given: int) -> void:

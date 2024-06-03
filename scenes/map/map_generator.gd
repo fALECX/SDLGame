@@ -1,8 +1,8 @@
 class_name MapGenerator
 extends Node
 
-const X_DIST := 50
-const Y_DIST := 140
+const X_DIST := 65
+const Y_DIST := 170
 const PLACEMENT_RANDOMNESS := 10
 const FLOORS := 8
 const MAP_WIDTH := 1
@@ -143,6 +143,7 @@ func _setup_random_room_weights() -> void:
 	
 	random_room_type_total_weight = random_room_type_weights[Room.Type.SHOP]
 
+#tiers festlegen
 
 func _setup_room_types() -> void:
 	# first floor is always a battle
@@ -160,7 +161,7 @@ func _setup_room_types() -> void:
 	for room: Room in map_data[2]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER
-			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
+			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(1)
 
 	# 3rd floor is always a shop
 	for room: Room in map_data[3]:
@@ -172,7 +173,7 @@ func _setup_room_types() -> void:
 	for room: Room in map_data[4]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER
-			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(1)
+			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 	#4th floor is always a monster room tier 2
 	for room: Room in map_data[5]:

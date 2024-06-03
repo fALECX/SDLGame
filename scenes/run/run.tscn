@@ -199,6 +199,7 @@ text = "Main Menu"
 
 [node name="Sprint" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 script = ExtResource("12_pxqhw")
 
 [node name="ColorRect" type="ColorRect" parent="Sprint"]

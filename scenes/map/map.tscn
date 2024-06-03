@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi6nnwqbl0qqo"]
+[gd_scene load_steps=10 format=3 uid="uid://bi6nnwqbl0qqo"]
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_vjyut"]
 [ext_resource type="PackedScene" uid="uid://b33j64lkeq7i3" path="res://scenes/map/map_generator.tscn" id="2_5qslq"]
 [ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="2_w0vvj"]
-[ext_resource type="Texture2D" uid="uid://kygx55urtpgi" path="res://art/SprintBackgroundNew.png" id="3_5hnva"]
+[ext_resource type="Texture2D" uid="uid://mb6x3td5f3fs" path="res://art/Background Sprint v1 downscale.png" id="3_4y43d"]
+[ext_resource type="Texture2D" uid="uid://b870jbri4texf" path="res://art/Background2.png" id="4_poqgu"]
+[ext_resource type="Texture2D" uid="uid://cxcygjgqeg8gs" path="res://art/Background1.png" id="4_v5oyx"]
+[ext_resource type="Texture2D" uid="uid://bsrf35satgir6" path="res://art/Background4.png" id="6_q14ej"]
+[ext_resource type="Texture2D" uid="uid://8sf35x8rycbc" path="res://art/Background3.png" id="7_vrn0n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpxpe"]
 shader = ExtResource("2_w0vvj")
@@ -15,10 +19,31 @@ position = Vector2(12, -94)
 script = ExtResource("1_vjyut")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_bpxpe")
-position = Vector2(136, -70)
-scale = Vector2(0.0256783, 0.0301498)
-texture = ExtResource("3_5hnva")
+position = Vector2(133.5, -245.5)
+scale = Vector2(0.300795, 0.196533)
+texture = ExtResource("3_4y43d")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(139, -335)
+scale = Vector2(0.0264061, 0.030861)
+texture = ExtResource("4_poqgu")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(139, 16)
+scale = Vector2(0.0264061, 0.0288603)
+texture = ExtResource("4_v5oyx")
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(139, -1002.63)
+scale = Vector2(0.0264061, 0.0247084)
+texture = ExtResource("6_q14ej")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(139.25, -682.25)
+scale = Vector2(0.0263541, 0.0255388)
+texture = ExtResource("7_vrn0n")
 
 [node name="Visuals" type="Node2D" parent="."]
 
@@ -33,6 +58,6 @@ unique_name_in_owner = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(10, 41)
 offset = Vector2(128, 72)
-limit_top = -680
-limit_bottom = -10
+limit_top = -1350
+limit_bottom = 50
 position_smoothing_speed = 36.0

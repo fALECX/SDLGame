@@ -1,9 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://cahno8aso5net"]
+[gd_scene load_steps=34 format=3 uid="uid://cahno8aso5net"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_4s751"]
 [ext_resource type="PackedScene" uid="uid://d0efyathkfg74" path="res://scenes/enemy/enemy.tscn" id="2_02s5s"]
+[ext_resource type="Resource" uid="uid://fac8mttp6u6m" path="res://battles/battle4_hacker_tier2.tres" id="2_jmknx"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_uaw60"]
-[ext_resource type="Resource" uid="uid://fac8mttp6u6m" path="res://battles/tier_0_crab.tres" id="2_ys5f7"]
 [ext_resource type="PackedScene" uid="uid://2n4lap6w3pde" path="res://scenes/player/player.tscn" id="3_dpj45"]
 [ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/8_bit_iced_village_lofi.mp3" id="3_nuoky"]
 [ext_resource type="PackedScene" uid="uid://dwt63vvppukag" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_vyv1n"]
@@ -13,10 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://b1kmqm3v2u8m7" path="res://art/BattleBackgroundv1.jpeg" id="5_7pyls"]
 [ext_resource type="Texture2D" uid="uid://b0o5mdisgunp5" path="res://art/skypebattle1 (2).png" id="6_6khi1"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_18vit"]
+[ext_resource type="Texture2D" uid="uid://d33fmdgoxhu7a" path="res://art/Battle2Office.png" id="7_xo71r"]
+[ext_resource type="Texture2D" uid="uid://bihg4vi4dnllk" path="res://art/Battle3Server.png" id="7_y834j"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_3di7i"]
 [ext_resource type="Resource" uid="uid://bbo24od4aavfj" path="res://enemies/bat/bat_enemy.tres" id="8_d4c2d"]
+[ext_resource type="Texture2D" uid="uid://caf4cb2svs1nn" path="res://art/Battle4Server.png" id="8_tdub6"]
+[ext_resource type="Texture2D" uid="uid://bh7hvg15eqboq" path="res://art/Battle5Server.png" id="9_hv1sy"]
 [ext_resource type="PackedScene" uid="uid://bnbwu7pkbrwox" path="res://scenes/ui/mana_ui.tscn" id="11_2vu01"]
+[ext_resource type="Texture2D" uid="uid://dmb4e5f8r7wdh" path="res://art/Battle7Serverf.png" id="11_a67wb"]
 [ext_resource type="PackedScene" uid="uid://chry0sgk7t0yf" path="res://scenes/ui/tooltip.tscn" id="12_qx741"]
+[ext_resource type="Texture2D" uid="uid://dgkwolxcrfvx0" path="res://art/BackgroundDotGridCards.png" id="12_v6m8y"]
 [ext_resource type="Theme" uid="uid://c8cqncsqlplyu" path="res://main_theme.tres" id="13_523u4"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_qvh8t"]
 [ext_resource type="PackedScene" uid="uid://bcdmoid8212ip" path="res://scenes/ui/card_pile_opener.tscn" id="17_8fteu"]
@@ -33,23 +39,86 @@ size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_4s751")
-battle_stats = ExtResource("2_ys5f7")
+battle_stats = ExtResource("2_jmknx")
 char_stats = ExtResource("4_fwb8a")
 music = ExtResource("3_nuoky")
 metadata/_edit_lock_ = true
 
-[node name="BattleBackgroundv1" type="Sprite2D" parent="."]
+[node name="Battle1Skype" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(129.25, 72)
-scale = Vector2(0.257324, 0.144531)
-texture = ExtResource("5_7pyls")
-
-[node name="Skypebattle1" type="Sprite2D" parent="."]
 position = Vector2(128, 72)
 scale = Vector2(0.364672, 0.2304)
 texture = ExtResource("6_6khi1")
 
+[node name="Battle2Office" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 49.5)
+scale = Vector2(0.184286, 0.12625)
+texture = ExtResource("7_xo71r")
+
+[node name="Battle3Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 48.5)
+scale = Vector2(0.0639881, 0.0438368)
+texture = ExtResource("7_y834j")
+
+[node name="Battle4Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 49)
+scale = Vector2(0.0639881, 0.0442708)
+texture = ExtResource("8_tdub6")
+
+[node name="Battle5Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 50)
+scale = Vector2(0.0644841, 0.0442708)
+texture = ExtResource("9_hv1sy")
+
+[node name="Battle6Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 48.5)
+scale = Vector2(0.253906, 0.0986328)
+texture = ExtResource("5_7pyls")
+
+[node name="Battle7Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(127.5, 47.5)
+scale = Vector2(0.133854, 0.0972222)
+texture = ExtResource("11_a67wb")
+
+[node name="BackgroundDotGridCards" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 121.5)
+scale = Vector2(0.0778902, 0.0717863)
+texture = ExtResource("12_v6m8y")
+
+[node name="BackgroundNineRect" type="NinePatchRect" parent="BackgroundDotGridCards"]
+show_behind_parent = true
+offset_left = -1644.0
+offset_top = -313.0
+offset_right = 1644.0
+offset_bottom = 313.0
+texture = ExtResource("17_vj2n2")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 101.0
+offset_right = 256.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
 [node name="CardDropArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
@@ -75,7 +144,7 @@ position = Vector2(234, 62)
 stats = ExtResource("8_d4c2d")
 
 [node name="Player" parent="." instance=ExtResource("3_dpj45")]
-position = Vector2(63, 60)
+position = Vector2(53, 64)
 stats = ExtResource("4_fwb8a")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_vyv1n")]

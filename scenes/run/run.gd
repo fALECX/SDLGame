@@ -171,7 +171,6 @@ func _show_regular_battle_rewards() -> void:
 
 
 func floors_climbed_no_return() -> void:
-	print("floors_climbed_no_return aufgerufen aus run.gd: floors: ", floors_climbed_run)
 	floors_climbed_run = map.floors_climbed
 	print("send floors emit aus floors_climbed_no_return in run.gd: floors: ", floors_climbed_run)
 	Events.send_floors.emit(floors_climbed_run)

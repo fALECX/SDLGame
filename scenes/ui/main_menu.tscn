@@ -239,6 +239,7 @@ patch_margin_right = 6
 patch_margin_bottom = 8
 
 [node name="SdlPractice" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_o6xxo")
 position = Vector2(48.0625, 10.375)
 scale = Vector2(0.0561719, 0.0517578)

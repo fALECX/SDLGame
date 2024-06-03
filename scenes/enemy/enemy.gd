@@ -16,25 +16,55 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
-var floors_climbed: int = 0
+var floors_climbed: int = 3
 
 func _ready() -> void:
+
+	print("ready aus enemy.gd called")
+	print("floors_climbed from ready in enemy.gd: ", floors_climbed)
 	status_handler.status_owner = self
 	Events.get_floors.emit()
 	Events.send_floors.connect(set_floors_climbed)
-	print("floors_climbed from enemy.gd: ", floors_climbed)
+	set_sprite_sizes()
+
+func set_floors_climbed(value: int) -> void:
+	floors_climbed = value
+	print("value: ", value)
+	#set_sprite_sizes()
+
+func set_sprite_sizes() -> void:
+	Events.get_floors.emit()
+	print("floors_climbed from set_sprite_sizes() enemy.gd: ", floors_climbed)
 	if(floors_climbed == 0):
-		collisionshape.scale = Vector2(5,5)
+		print("if clause triggered in set_sprite_size() enemy.gd: 0")
+		collisionshape.scale = Vector2(7,5)
+		collisionshape.position = Vector2(-55,-30)
 		stats_ui.scale = Vector2(2,2)
 		stats_ui.position = Vector2(-150, 0)
 		intent_ui.position = Vector2(-85,-100)
-
-
-func set_floors_climbed(value: int) -> void:
-	print("floors_climbed from enemy: ", value)
-	floors_climbed = value
-	#set_enemy_size(value)
-
+		arrow.scale = Vector2(3,3)
+		sprite_2d.visible = false
+	if(floors_climbed == 1):
+		print("if clause triggered in set_sprite_size() enemy.gd: 1")
+		collisionshape.scale = Vector2(7,5)
+		collisionshape.position = Vector2(15,-10)
+		stats_ui.scale = Vector2(2,2)
+		stats_ui.position = Vector2(-65, 30)
+		intent_ui.position = Vector2(0,-75)
+		arrow.scale = Vector2(3,3)
+		sprite_2d.visible = false
+	if(floors_climbed == 2):
+		collisionshape.scale = Vector2(7,5)
+		collisionshape.position = Vector2(15,-10)
+		stats_ui.scale = Vector2(2,2)
+		stats_ui.position = Vector2(-65, 30)
+		intent_ui.position = Vector2(0,-75)
+		arrow.scale = Vector2(3,3)
+	if(floors_climbed == 3):
+		intent_ui.scale = Vector2(0.7,0.7)
+		intent_ui.position = Vector2(-15,-40)
+		arrow.scale = Vector2(3,3)
+		stats_ui.position = Vector2(-43,18)
 	#skalierung von ui und sprite hide wenn sprint 1 (skype szene)
 func set_enemy_size(value: int) -> void:
 	print(value)
@@ -92,7 +122,7 @@ func update_enemy() -> void:
 		await ready
 	
 	sprite_2d.texture = stats.art
-	sprite_2d.scale = Vector2(0.15,0.15)
+	sprite_2d.scale = Vector2(0.05,0.05)
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x / 2 + ARROW_OFFSET)
 	setup_ai()
 	update_stats()
