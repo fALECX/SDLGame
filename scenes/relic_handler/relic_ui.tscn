@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cffojbaqb6aic"]
 
 [ext_resource type="Script" path="res://scenes/relic_handler/relic_ui.gd" id="1_j0xw6"]
-[ext_resource type="Texture2D" uid="uid://boklhiqs1414d" path="res://art/tile_0115.png" id="1_s87be"]
 [ext_resource type="Resource" uid="uid://mlqnn3hw51tt" path="res://relics/endless_healing_potion.tres" id="2_6phaa"]
 [ext_resource type="Material" uid="uid://d30aqi80c1nrc" path="res://art/white_sprite_material.tres" id="2_amwmx"]
+[ext_resource type="Texture2D" uid="uid://dyeqc34u86o4i" path="res://art/Healing Potion.png" id="3_pe7du"]
 
 [sub_resource type="Animation" id="Animation_k2a6s"]
 length = 0.001
@@ -88,7 +88,7 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-texture = ExtResource("1_s87be")
+texture = ExtResource("3_pe7du")
 expand_mode = 1
 stretch_mode = 5
 

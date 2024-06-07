@@ -8,6 +8,7 @@ const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE = preload("res://scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
+const LOSE_SCREEN_SCENE := preload("res://scenes/win_screen/lose_screen.tscn")
 const DESK_SCENE := preload("res://whole_desk.tscn")
 
 
@@ -211,10 +212,17 @@ func _on_shop_entered() -> void:
 
 
 func _on_battle_won() -> void:
-	if map.floors_climbed == MapGenerator.FLOORS:
+	#wenn mind. 120 Kundenzufriedenheit, dann Win screen, char anzeigen und game delete data
+	if(map.floors_climbed == MapGenerator.FLOORS && stats.gold >= 120):
 		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character
 		SaveGame.delete_data()
+		#wenn nicht mind. 120 Kundenzufriedenheit, dann Lose screen, char anzeigen und game delete data
+	if(map.floors_climbed == MapGenerator.FLOORS && stats.gold <= 120):
+		var lose_screen := _change_view(LOSE_SCREEN_SCENE) as LoseScreen
+		lose_screen.character = character
+		SaveGame.delete_data()
+		#wenn nicht aktueller floor == insg. floors, dann map unlock next rooms
 	else:
 		#edited dass event signal emitted wird, dass anzeigt dass floor besiegt wurde und somit rewards aus dem array des spezifischen sprints ausgegeben werden
 		Events.change_cards.emit(floors_climbed_run)

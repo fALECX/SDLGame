@@ -19,7 +19,6 @@ script = ExtResource("1_ogp3w")
 texture = ExtResource("1_exhc0")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(16, 0)
 rotation = -1.5708
 texture = ExtResource("2_x2iwj")

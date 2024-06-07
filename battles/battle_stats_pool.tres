@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://custom_resources/battle_stats_pool.gd" id="1_0b7nw"]
 [ext_resource type="Resource" uid="uid://d4n1weobmw711" path="res://battles/battle1_kunde_tier0.tres" id="1_ydihg"]
-[ext_resource type="Resource" uid="uid://cuuiyfwaku0qs" path="res://battles/battle2_robots_tier1.tres" id="2_u6mm0"]
+[ext_resource type="Resource" uid="uid://cuuiyfwaku0qs" path="res://battles/battle2_robots_tier0.tres" id="2_u6mm0"]
 [ext_resource type="Resource" uid="uid://g15y0vtuysbb" path="res://battles/battle3_2robots_tier1.tres" id="3_vutkt"]
 [ext_resource type="Resource" uid="uid://bdv5sq5xskuui" path="res://battles/battle5_hacker_robot_tier2.tres" id="4_6ae2b"]
 [ext_resource type="Resource" uid="uid://fac8mttp6u6m" path="res://battles/battle4_hacker_tier2.tres" id="4_g4wdw"]

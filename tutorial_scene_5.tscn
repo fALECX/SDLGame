@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://c07h4kpvvjee6"]
+[gd_scene load_steps=14 format=3 uid="uid://c07h4kpvvjee6"]
 
-[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_io7by"]
 [ext_resource type="Script" path="res://tutorial_scene_5.gd" id="1_iw6sv"]
-[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_s5c3n"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_wowe5"]
-[ext_resource type="Texture2D" uid="uid://buw5krok16i7v" path="res://art/Intention.png" id="3_3eg8h"]
-[ext_resource type="Texture2D" uid="uid://b74c1xg547oq2" path="res://art/intentionShield.png" id="4_7pnfk"]
+[ext_resource type="Texture2D" uid="uid://1wofn5vpsi8f" path="res://art/ShieldCode.png" id="3_atxjf"]
+[ext_resource type="Texture2D" uid="uid://bpttcb77ak0b5" path="res://art/firewall.png" id="4_selrg"]
+[ext_resource type="Texture2D" uid="uid://bp7ea42hryqj8" path="res://art/Firewall Block Groß.png" id="5_4gs8x"]
+[ext_resource type="Texture2D" uid="uid://c0ubv461g4m2m" path="res://art/SpeechAttack.png" id="6_3jkej"]
+[ext_resource type="Texture2D" uid="uid://7hj68glij0nf" path="res://art/Refusing.png" id="7_8fbb5"]
+[ext_resource type="Texture2D" uid="uid://fylpyd2buu45" path="res://art/Ransomware.png" id="8_ka126"]
+[ext_resource type="Texture2D" uid="uid://dxapu6cqa87ps" path="res://art/0 Day Exploit.png" id="9_me7df"]
+[ext_resource type="Texture2D" uid="uid://blxfuvocy62t8" path="res://art/Keylogger.png" id="10_ep8xd"]
 
 [sub_resource type="Gradient" id="Gradient_pa23l"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
@@ -18,11 +22,6 @@ width = 50
 line_spacing = 10.0
 shadow_size = 4
 shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i7pv"]
-shader = ExtResource("1_io7by")
-shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
-shader_parameter/line_thickness = 5.447
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_iw6sv")
@@ -52,21 +51,38 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "SDL Security Game"
+text = "Secure the Code"
 label_settings = SubResource("LabelSettings_1s365")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 9.0
 offset_top = 44.0
 offset_right = 165.0
 offset_bottom = 126.0
-text = "Zum Glück hast du einen kleinen Vorteil: Über den Köpfen der Angreifer kannst du erkennen, welchen Zug sie als nächstes machen werden. 
+text = "Zum Glück hast du einen kleinen Vorteil: Über den Kontrahenten kannst du erkennen, welchen Zug sie als nächstes machen werden. 
 
-Angreifen - oder Verteidigen.
+Angreifen, Verteidigen - oder Motivieren für die kommende Runde.
 
 Überlege schlau, wie du auf ihre Intentionen reagierst, und benutze deine Karten überlegt!"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 177.0
+offset_top = 5.0
+offset_right = 227.0
+offset_bottom = 27.0
+text = "Verteidigung:"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 178.0
+offset_top = 50.0
+offset_right = 228.0
+offset_bottom = 72.0
+text = "Angriff:"
 autowrap_mode = 3
 
 [node name="Continue" type="Button" parent="."]
@@ -80,6 +96,7 @@ text = "Weiter"
 
 [node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
 show_behind_parent = true
+layout_mode = 0
 offset_right = 36.0
 offset_bottom = 17.0
 texture = ExtResource("2_wowe5")
@@ -88,24 +105,48 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 8
 
-[node name="SdlPractice" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0i7pv")
-position = Vector2(48.0625, 10.375)
-scale = Vector2(0.0561719, 0.0517578)
-texture = ExtResource("2_s5c3n")
-
 [node name="Backgroundv2" type="Sprite2D" parent="."]
 position = Vector2(214.5, 61.3125)
 scale = Vector2(0.0359008, 0.0257865)
 
-[node name="Intention" type="Sprite2D" parent="."]
-position = Vector2(190, 33)
-scale = Vector2(0.0754352, 0.0793104)
-texture = ExtResource("3_3eg8h")
+[node name="ShieldCode" type="Sprite2D" parent="."]
+position = Vector2(189.562, 30.3125)
+scale = Vector2(0.0271394, 0.0223551)
+texture = ExtResource("3_atxjf")
 
-[node name="IntentionShield" type="Sprite2D" parent="."]
-position = Vector2(214, 87)
-scale = Vector2(0.122043, 0.116379)
-texture = ExtResource("4_7pnfk")
+[node name="Firewall" type="Sprite2D" parent="."]
+position = Vector2(222.562, 25.3125)
+scale = Vector2(0.0206561, 0.0207812)
+texture = ExtResource("4_selrg")
+
+[node name="FirewallBlockGroß" type="Sprite2D" parent="."]
+position = Vector2(206.563, 40.3125)
+scale = Vector2(0.0240633, 0.0197626)
+texture = ExtResource("5_4gs8x")
+
+[node name="SpeechAttack" type="Sprite2D" parent="."]
+position = Vector2(188, 86.5)
+scale = Vector2(0.0231362, 0.0267319)
+texture = ExtResource("6_3jkej")
+
+[node name="Refusing" type="Sprite2D" parent="."]
+position = Vector2(241.562, 39.3125)
+scale = Vector2(0.0227726, 0.0215054)
+texture = ExtResource("7_8fbb5")
+
+[node name="Ransomware" type="Sprite2D" parent="."]
+position = Vector2(208.156, 77.25)
+scale = Vector2(0.0219406, 0.0207809)
+texture = ExtResource("8_ka126")
+
+[node name="0DayExploit" type="Sprite2D" parent="."]
+position = Vector2(224.594, 89.875)
+scale = Vector2(0.019262, 0.0183293)
+texture = ExtResource("9_me7df")
+
+[node name="Keylogger" type="Sprite2D" parent="."]
+position = Vector2(241, 79.5)
+scale = Vector2(0.022404, 0.0189988)
+texture = ExtResource("10_ep8xd")
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

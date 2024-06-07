@@ -18,6 +18,8 @@ extends Node2D
 @onready var battle_6: Sprite2D = $Battle6Server
 @onready var battle_7: Sprite2D = $Battle7Server
 @onready var backgroundcardgrid: Sprite2D = $BackgroundDotGridCards
+@onready var sprintstory: CanvasLayer = $SprintStory
+@onready var einleitung: Sprite2D = %Einleitung
 var floors_climbed := 0
 
 func _ready() -> void:
@@ -44,29 +46,38 @@ func floors_climbed_update(floors :int) -> void:
 		print("Hide player emit from floors_climbed_changed from battle.gd")
 		Events.hide_player.emit()
 		battle_1.visible = true
+		sprintstory.visible = true
+		%Einleitung.visible = true
 		backgroundcardgrid.visible = false
 	if(floors_climbed == 2):
 		backgroundcardgrid.visible = true
 		battle_2.visible = true
+		%AlterBekannter1.visible = true
+		%AlterBekannter2.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 3):
 		backgroundcardgrid.visible = true
+		%Cybercrime.visible = true
 		battle_3.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 4):
 		backgroundcardgrid.visible = true
+		%BugHunting.visible = true
 		battle_4.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 5):
 		backgroundcardgrid.visible = true
+		%TrojanHorse.visible = true
 		battle_5.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 6):
 		backgroundcardgrid.visible = true
+		%Release.visible = true
 		battle_6.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 7):
 		backgroundcardgrid.visible = true
+		%Gegnerteam.visible = true
 		battle_7.visible = true
 		Events.show_player.emit()
 
@@ -74,6 +85,11 @@ func floors_climbed_changed(floors_given: int) -> void:
 	print("Floor changed from battle.gd: ", floors_given)
 	floors_climbed = floors_given
 
+func _on_to_battle_button_pressed() -> void:
+	if(floors_climbed == 2 && $CanvasLayer/AlterBekannter1.visible == true):
+		$CanvasLayer/AlterBekannter1.visible = false
+	else:
+		sprintstory.visible = false
 
 func start_battle() -> void:
 	get_tree().paused = false
@@ -100,7 +116,7 @@ func _on_enemy_turn_ended() -> void:
 
 
 func _on_player_died() -> void:
-	Events.battle_over_screen_requested.emit("Game Over!", BattleOverPanel.Type.LOSE)
+	Events.battle_over_screen_requested.emit("Sprint nicht geschafft!", BattleOverPanel.Type.LOSE)
 	SaveGame.delete_data()
 
 
@@ -110,4 +126,4 @@ func _on_relics_activated(type: Relic.Type) -> void:
 			player_handler.start_battle(char_stats)
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
-			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)
+			Events.battle_over_screen_requested.emit("Sprint bestanden!", BattleOverPanel.Type.WIN)

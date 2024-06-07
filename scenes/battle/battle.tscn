@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cahno8aso5net"]
+[gd_scene load_steps=42 format=3 uid="uid://cahno8aso5net"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_4s751"]
 [ext_resource type="PackedScene" uid="uid://d0efyathkfg74" path="res://scenes/enemy/enemy.tscn" id="2_02s5s"]
@@ -31,6 +31,14 @@
 [ext_resource type="Texture2D" uid="uid://ib5rv5vo4epg" path="res://art/Deckpile.png" id="19_8ob28"]
 [ext_resource type="PackedScene" uid="uid://dws7irhbqmomu" path="res://scenes/ui/card_pile_view.tscn" id="20_tpgna"]
 [ext_resource type="PackedScene" uid="uid://hvec6vsgxakl" path="res://scenes/ui/status_view.tscn" id="24_gocfp"]
+[ext_resource type="Texture2D" uid="uid://d2g6iru6c4knc" path="res://scenes/battle/Group 82.png" id="32_2dt72"]
+[ext_resource type="Texture2D" uid="uid://bwd0m40p47jt4" path="res://scenes/battle/AB2.png" id="33_f71gw"]
+[ext_resource type="Texture2D" uid="uid://cja6g64sqi83w" path="res://scenes/battle/Group 77.png" id="34_0guk4"]
+[ext_resource type="Texture2D" uid="uid://bg4do52bi6t8b" path="res://scenes/battle/AB1.png" id="34_dw0w1"]
+[ext_resource type="Texture2D" uid="uid://d1axqxa3hmv5n" path="res://scenes/battle/Group 78.png" id="35_rv2wg"]
+[ext_resource type="Texture2D" uid="uid://br0qfnuficrgu" path="res://scenes/battle/Group 85.png" id="36_5wcjl"]
+[ext_resource type="Texture2D" uid="uid://dhijsgt6pb04r" path="res://scenes/battle/Group 84 (1).png" id="37_leth4"]
+[ext_resource type="Texture2D" uid="uid://b1gwbdbbqlx1d" path="res://scenes/battle/Group 83.png" id="38_g6fym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyg5u"]
 size = Vector2(256, 100)
@@ -347,4 +355,71 @@ layer = 4
 [node name="StatusView" parent="StatusViewLayer" instance=ExtResource("24_gocfp")]
 visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="SprintStory" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Einleitung" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(127.5, 72)
+scale = Vector2(0.0264605, 0.0245065)
+texture = ExtResource("32_2dt72")
+
+[node name="AlterBekannter2" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(128.977, 72.053)
+scale = Vector2(0.0266189, 0.0246478)
+texture = ExtResource("33_f71gw")
+
+[node name="AlterBekannter1" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(127.988, 74.428)
+scale = Vector2(0.0266164, 0.025288)
+texture = ExtResource("34_dw0w1")
+
+[node name="Cybercrime" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(128.023, 72.4469)
+scale = Vector2(0.0272426, 0.0248191)
+texture = ExtResource("34_0guk4")
+
+[node name="BugHunting" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(128.5, 71.5)
+scale = Vector2(0.026718, 0.0248373)
+texture = ExtResource("35_rv2wg")
+
+[node name="TrojanHorse" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(127.5, 72)
+scale = Vector2(0.026718, 0.0250086)
+texture = ExtResource("36_5wcjl")
+
+[node name="Release" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(128, 72.5)
+scale = Vector2(0.026614, 0.0248373)
+texture = ExtResource("37_leth4")
+
+[node name="Gegnerteam" type="Sprite2D" parent="SprintStory"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(127.977, 72.553)
+scale = Vector2(0.0270347, 0.0251617)
+texture = ExtResource("38_g6fym")
+
+[node name="ToBattleButton" type="Button" parent="SprintStory"]
+offset_left = 209.0
+offset_top = 127.0
+offset_right = 252.0
+offset_bottom = 140.0
+text = "Weiter"
+
+[connection signal="pressed" from="SprintStory/ToBattleButton" to="." method="_on_to_battle_button_pressed"]

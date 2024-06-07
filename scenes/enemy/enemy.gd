@@ -16,7 +16,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
-var floors_climbed: int = 3
+var floors_climbed: int = 0
 
 func _ready() -> void:
 
@@ -32,6 +32,7 @@ func set_floors_climbed(value: int) -> void:
 	print("value: ", value)
 	#set_sprite_sizes()
 
+#sprite sizes setzen, wichtig sprint 1 : skype, daher andere sizes und scales
 func set_sprite_sizes() -> void:
 	Events.get_floors.emit()
 	print("floors_climbed from set_sprite_sizes() enemy.gd: ", floors_climbed)
@@ -53,24 +54,15 @@ func set_sprite_sizes() -> void:
 		intent_ui.position = Vector2(0,-75)
 		arrow.scale = Vector2(3,3)
 		sprite_2d.visible = false
-	if(floors_climbed == 2):
-		collisionshape.scale = Vector2(7,5)
-		collisionshape.position = Vector2(15,-10)
-		stats_ui.scale = Vector2(2,2)
-		stats_ui.position = Vector2(-65, 30)
-		intent_ui.position = Vector2(0,-75)
-		arrow.scale = Vector2(3,3)
-	if(floors_climbed == 3):
+	if([2,3,4,5,6,7].has(floors_climbed)):
+		collisionshape.scale = Vector2(2,2)
+		stats_ui.offset_top = 5
+		intent_ui.offset_bottom = 40
 		intent_ui.scale = Vector2(0.7,0.7)
-		intent_ui.position = Vector2(-15,-40)
 		arrow.scale = Vector2(3,3)
-		stats_ui.position = Vector2(-43,18)
-	#skalierung von ui und sprite hide wenn sprint 1 (skype szene)
-func set_enemy_size(value: int) -> void:
-	print(value)
-	if(value == 1):
-		stats_ui.scale = Vector2(2,2)
-		intent_ui.position = Vector2(75,-65)
+	else:
+		pass
+
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value

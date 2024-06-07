@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://4gfivdwgpjal"]
+[gd_scene load_steps=7 format=3 uid="uid://4gfivdwgpjal"]
 
 [ext_resource type="Script" path="res://scenes/win_screen/win_screen.gd" id="1_x1e2d"]
-[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="2_40ix8"]
+[ext_resource type="Texture2D" uid="uid://tquh0ocrnxi2" path="res://art/SuperHeroChar.png" id="2_0fs1q"]
+[ext_resource type="Texture2D" uid="uid://q448yiyvee5d" path="res://art/Customer Satisfaction.png" id="3_kh4jk"]
 
 [sub_resource type="Gradient" id="Gradient_viej5"]
 colors = PackedColorArray(0.201844, 0.118659, 0.0516602, 1, 0.0567877, 0.00125275, 0.0583082, 1)
@@ -44,38 +45,45 @@ offset_top = -103.0
 offset_right = 80.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("2_40ix8")
+texture = ExtResource("2_0fs1q")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 103.0
-offset_bottom = 42.0
+offset_left = -43.0
+offset_top = -19.0
+offset_right = 87.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="Message" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "The Warrior
-is victorious!"
+text = "Mr. Superhero hat es geschafft!"
 label_settings = SubResource("LabelSettings_eew74")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="MainMenuButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(55, 14)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Main Menu"
+text = "Hauptmenü"
+
+[node name="CustomerSatisfaction" type="Sprite2D" parent="."]
+position = Vector2(148.906, 28.6875)
+scale = Vector2(0.0697394, 0.0670856)
+texture = ExtResource("3_kh4jk")
 
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

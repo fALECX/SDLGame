@@ -1,32 +1,177 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg35qhmsbptry"]
+[gd_scene load_steps=44 format=3 uid="uid://cg35qhmsbptry"]
 
 [ext_resource type="Script" path="res://tutorial_screen_3.gd" id="1_kymee"]
-[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_qx872"]
+[ext_resource type="Texture2D" uid="uid://do04rit3smcbw" path="res://art/MainMenuJpg/AnimatedOffice-0000.jpg" id="2_iaehd"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_ny3iq"]
-[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_whtrw"]
-[ext_resource type="Texture2D" uid="uid://cwsjii0roc08g" path="res://art/Backgroundv2.jpg" id="3_8rg7s"]
+[ext_resource type="Texture2D" uid="uid://nvypc2ikbs53" path="res://art/MainMenuJpg/AnimatedOffice-0001.jpg" id="3_aorv0"]
+[ext_resource type="Texture2D" uid="uid://dn3gqqpmmgnoe" path="res://art/MainMenuJpg/AnimatedOffice-0002.jpg" id="4_rjbai"]
+[ext_resource type="Texture2D" uid="uid://ci85a1hapm7qf" path="res://art/MainMenuJpg/AnimatedOffice-0003.jpg" id="5_7ooiy"]
+[ext_resource type="Texture2D" uid="uid://b0nllowchnp2n" path="res://art/MainMenuJpg/AnimatedOffice-0004.jpg" id="6_bjaj6"]
+[ext_resource type="Texture2D" uid="uid://c1u5fhfud16oo" path="res://art/MainMenuJpg/AnimatedOffice-0005.jpg" id="7_lk853"]
+[ext_resource type="Texture2D" uid="uid://cx8v0tvnetgye" path="res://art/MainMenuJpg/AnimatedOffice-0006.jpg" id="8_qg1mw"]
+[ext_resource type="Texture2D" uid="uid://brptaqhdyi4k4" path="res://art/MainMenuJpg/AnimatedOffice-0007.jpg" id="9_4div6"]
+[ext_resource type="Texture2D" uid="uid://fjcgikdwr7ak" path="res://art/MainMenuJpg/AnimatedOffice-0008.jpg" id="10_jncv7"]
+[ext_resource type="Texture2D" uid="uid://nj22ona853c1" path="res://art/MainMenuJpg/AnimatedOffice-0009.jpg" id="11_kg287"]
+[ext_resource type="Texture2D" uid="uid://c1nlov7nj8rom" path="res://art/MainMenuJpg/AnimatedOffice-0010.jpg" id="12_206gd"]
+[ext_resource type="Texture2D" uid="uid://r33lqimcqt7e" path="res://art/MainMenuJpg/AnimatedOffice-0011.jpg" id="13_2g7vr"]
+[ext_resource type="Texture2D" uid="uid://be4cr4855iy5y" path="res://art/MainMenuJpg/AnimatedOffice-0012.jpg" id="14_mngwg"]
+[ext_resource type="Texture2D" uid="uid://c004hctwbigo6" path="res://art/MainMenuJpg/AnimatedOffice-0013.jpg" id="15_md0vr"]
+[ext_resource type="Texture2D" uid="uid://gniw5g5tk7hc" path="res://art/MainMenuJpg/AnimatedOffice-0014.jpg" id="16_srmfq"]
+[ext_resource type="Texture2D" uid="uid://dooacs65ngka3" path="res://art/MainMenuJpg/AnimatedOffice-0015.jpg" id="17_ujvgb"]
+[ext_resource type="Texture2D" uid="uid://x5ie7qt3sl1m" path="res://art/MainMenuJpg/AnimatedOffice-0016.jpg" id="18_8eti3"]
+[ext_resource type="Texture2D" uid="uid://5f2y13sepb65" path="res://art/MainMenuJpg/AnimatedOffice-0017.jpg" id="19_nimwy"]
+[ext_resource type="Texture2D" uid="uid://dg5wrmiumg3c5" path="res://art/MainMenuJpg/AnimatedOffice-0018.jpg" id="20_n10p7"]
+[ext_resource type="Texture2D" uid="uid://bx3rqyleruftr" path="res://art/MainMenuJpg/AnimatedOffice-0019.jpg" id="21_upw5k"]
+[ext_resource type="Texture2D" uid="uid://bg6oagrl1a6e7" path="res://art/MainMenuJpg/AnimatedOffice-0020.jpg" id="22_rdiny"]
+[ext_resource type="Texture2D" uid="uid://dutbv5wys0opx" path="res://art/MainMenuJpg/AnimatedOffice-0021.jpg" id="23_jxidj"]
+[ext_resource type="Texture2D" uid="uid://i8irnyc2sdb0" path="res://art/MainMenuJpg/AnimatedOffice-0022.jpg" id="24_iig25"]
+[ext_resource type="Texture2D" uid="uid://6rvc5ki7y200" path="res://art/MainMenuJpg/AnimatedOffice-0023.jpg" id="25_sq74e"]
+[ext_resource type="Texture2D" uid="uid://26opuli4e078" path="res://art/MainMenuJpg/AnimatedOffice-0024.jpg" id="26_xpjms"]
+[ext_resource type="Texture2D" uid="uid://ijeegcno411s" path="res://art/MainMenuJpg/AnimatedOffice-0025.jpg" id="27_neolp"]
+[ext_resource type="Texture2D" uid="uid://cj0fud77sst3k" path="res://art/MainMenuJpg/AnimatedOffice-0026.jpg" id="28_ulry6"]
+[ext_resource type="Texture2D" uid="uid://cy68gy7ks656e" path="res://art/MainMenuJpg/AnimatedOffice-0027.jpg" id="29_7upvq"]
+[ext_resource type="Texture2D" uid="uid://3ydty5wbn6bk" path="res://art/MainMenuJpg/AnimatedOffice-0028.jpg" id="30_58lu4"]
+[ext_resource type="Texture2D" uid="uid://cgwqsj315h1j8" path="res://art/MainMenuJpg/AnimatedOffice-0029.jpg" id="31_yei2x"]
+[ext_resource type="Texture2D" uid="uid://8c2whhhd42mf" path="res://art/MainMenuJpg/AnimatedOffice-0030.jpg" id="32_wvfjw"]
+[ext_resource type="Texture2D" uid="uid://bnb7wdwq2f558" path="res://art/MainMenuJpg/AnimatedOffice-0031.jpg" id="33_jb7wf"]
+[ext_resource type="Texture2D" uid="uid://smkmatgd6hi2" path="res://art/MainMenuJpg/AnimatedOffice-0032.jpg" id="34_bla6t"]
+[ext_resource type="Texture2D" uid="uid://ofmx16mmb7qh" path="res://art/MainMenuJpg/AnimatedOffice-0033.jpg" id="35_2un6e"]
+[ext_resource type="Texture2D" uid="uid://does3unqypxtg" path="res://art/MainMenuJpg/AnimatedOffice-0034.jpg" id="36_qcj5a"]
+[ext_resource type="Texture2D" uid="uid://b0kqd5wlnuvf2" path="res://art/MainMenuJpg/AnimatedOffice-0035.jpg" id="37_0sf20"]
+[ext_resource type="Texture2D" uid="uid://hart22petdvk" path="res://Whole Desk Tutorial Pic.png" id="39_thirv"]
 
-[sub_resource type="Gradient" id="Gradient_ttaxr"]
+[sub_resource type="Gradient" id="Gradient_2f4xj"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_uxugw"]
-gradient = SubResource("Gradient_ttaxr")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jq7hj"]
+gradient = SubResource("Gradient_2f4xj")
 width = 50
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81hk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iaehd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aorv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjbai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ooiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjaj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lk853")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qg1mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4div6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jncv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kg287")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_206gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2g7vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mngwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_md0vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_srmfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ujvgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8eti3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nimwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_n10p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_upw5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rdiny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jxidj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_iig25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sq74e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xpjms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_neolp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ulry6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7upvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_58lu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_yei2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wvfjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jb7wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bla6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2un6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_qcj5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0sf20")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i4xgc"]
 line_spacing = 10.0
 shadow_size = 4
 shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrn2s"]
-shader = ExtResource("1_qx872")
-shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
-shader_parameter/line_thickness = 5.447
-
 [node name="tutorial_screen_3" type="Node2D"]
 script = ExtResource("1_kymee")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,8 +180,15 @@ offset_right = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.10676, 144.333)
-texture = SubResource("GradientTexture1D_uxugw")
+texture = SubResource("GradientTexture1D_jq7hj")
 expand_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.180392)
+position = Vector2(128, 71)
+scale = Vector2(0.4, 0.338028)
+sprite_frames = SubResource("SpriteFrames_81hk5")
+autoplay = "default"
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 8
@@ -44,26 +196,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = 12.0
-offset_right = 155.0
-offset_bottom = 40.0
+offset_left = -25.0
+offset_top = 1.0
+offset_right = 157.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "SDL Security Game"
+text = "Secure the Code"
 label_settings = SubResource("LabelSettings_i4xgc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 9.0
-offset_top = 44.0
-offset_right = 165.0
-offset_bottom = 122.0
-text = "In diesem Spiel durchläufst du 8 Sprints der Softwareentwicklung. Die \"Sprintkarte\" auf der rechten Seite zeigt dir an in welchem Sprint du dich aktuell befindest. Arbeite dich entlang der Linie bis zum Ende des Projektes vor!
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 142.0
+offset_bottom = 136.0
+text = "In diesem Spiel durchläufst du 8 Sprints eines Softwareprojekts. Doch keine Angst - damit du nicht die Übersicht verlierst hast du deinen ganz persönlichen Arbeitsplatz! Hier hast du 2 Optionen
 
-Sobald du dich in den ersten Sprint begibst, musst du dich den Gefahren der Softwareentwicklung stellen..."
+Mit Click auf den Bildschirm gelangst du zur Sprintübersicht.
+
+Mit Click auf das Whiteboard kannst du nützliche Informationen nocheinmal nachlesen."
 autowrap_mode = 3
 
 [node name="Continue" type="Button" parent="."]
@@ -77,6 +231,7 @@ text = "Weiter"
 
 [node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
 show_behind_parent = true
+layout_mode = 0
 offset_right = 36.0
 offset_bottom = 17.0
 texture = ExtResource("2_ny3iq")
@@ -85,15 +240,21 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 8
 
-[node name="SdlPractice" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_vrn2s")
-position = Vector2(48.0625, 10.375)
-scale = Vector2(0.0561719, 0.0517578)
-texture = ExtResource("2_whtrw")
+[node name="WholeDeskTutorialPic" type="Sprite2D" parent="."]
+position = Vector2(198, 69)
+scale = Vector2(0.0655738, 0.0711864)
+texture = ExtResource("39_thirv")
 
-[node name="Backgroundv2" type="Sprite2D" parent="."]
-position = Vector2(214.5, 61.3125)
-scale = Vector2(0.0359008, 0.0257865)
-texture = ExtResource("3_8rg7s")
+[node name="BackgroundNineRect" type="NinePatchRect" parent="WholeDeskTutorialPic"]
+show_behind_parent = true
+offset_left = -823.0
+offset_top = -483.0
+offset_right = 824.0
+offset_bottom = 471.0
+texture = ExtResource("2_ny3iq")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

@@ -2,7 +2,7 @@ class_name WinScreen
 extends Control
 
 const MAIN_MENU_SCENE := preload("res://scenes/ui/main_menu.tscn")
-const MESSAGE := "The %s\nis victorious!"
+const MESSAGE := "%s\nhat es geschafft! Der Kunde ist zufrieden, und das Projekt abgeschlossen!"
 
 @export var character: CharacterStats : set = set_character
 
