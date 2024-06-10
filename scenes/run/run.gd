@@ -119,10 +119,8 @@ func _setup_top_bar() -> void:
 	character.stats_changed.connect(health_ui.update_stats.bind(character))
 	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
-	
 	relic_handler.add_relic(character.starting_relic)
 	Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
-	
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
@@ -156,8 +154,6 @@ func _setup_event_connections() -> void:
 
 #added function to show floors climbed
 func _show_regular_battle_rewards() -> void:
-
-
 	%TopBar.visible = false
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
@@ -213,15 +209,19 @@ func _on_shop_entered() -> void:
 
 func _on_battle_won() -> void:
 	#wenn mind. 120 Kundenzufriedenheit, dann Win screen, char anzeigen und game delete data
-	if(map.floors_climbed == MapGenerator.FLOORS && stats.gold >= 120):
-		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
-		win_screen.character = character
-		SaveGame.delete_data()
-		#wenn nicht mind. 120 Kundenzufriedenheit, dann Lose screen, char anzeigen und game delete data
-	if(map.floors_climbed == MapGenerator.FLOORS && stats.gold <= 120):
-		var lose_screen := _change_view(LOSE_SCREEN_SCENE) as LoseScreen
-		lose_screen.character = character
-		SaveGame.delete_data()
+	print("on battle won from run.gd: map.floors_climbed: ", map.floors_climbed, " and MapGenerator.FLOORS: ", MapGenerator.FLOORS)
+	if(map.floors_climbed == MapGenerator.FLOORS):
+		print("floors_climbed == MapGenerator.FLOORS triggered")
+		if(stats.gold > 250):
+			print("gold > 120 triggered")
+			var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
+			win_screen.character = character
+			SaveGame.delete_data()
+		if(stats.gold <= 250):
+			print("gold <= 120 triggered")
+			var lose_screen := _change_view(LOSE_SCREEN_SCENE) as LoseScreen
+			lose_screen.character = character
+			SaveGame.delete_data()
 		#wenn nicht aktueller floor == insg. floors, dann map unlock next rooms
 	else:
 		#edited dass event signal emitted wird, dass anzeigt dass floor besiegt wurde und somit rewards aus dem array des spezifischen sprints ausgegeben werden

@@ -1,33 +1,177 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2kif87udda37"]
+[gd_scene load_steps=44 format=3 uid="uid://c2kif87udda37"]
 
 [ext_resource type="Script" path="res://tutorial_scene_6.gd" id="1_q3qji"]
-[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_tq7jp"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_7k53w"]
-[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_45v1i"]
-[ext_resource type="Texture2D" uid="uid://cijn254i681ol" path="res://art/CardRewards.png" id="3_odaaa"]
-[ext_resource type="Texture2D" uid="uid://bh0nd2auoc6ec" path="res://art/CardRewardTooltip.png" id="4_nyfgn"]
+[ext_resource type="Texture2D" uid="uid://do04rit3smcbw" path="res://art/MainMenuJpg/AnimatedOffice-0000.jpg" id="2_bhe1l"]
+[ext_resource type="Texture2D" uid="uid://nvypc2ikbs53" path="res://art/MainMenuJpg/AnimatedOffice-0001.jpg" id="3_coyy6"]
+[ext_resource type="Texture2D" uid="uid://c433ohw5cigvm" path="res://scenes/battle_reward/SprintRewardsScreen.png" id="3_wwa45"]
+[ext_resource type="Texture2D" uid="uid://dn3gqqpmmgnoe" path="res://art/MainMenuJpg/AnimatedOffice-0002.jpg" id="4_sylk4"]
+[ext_resource type="Texture2D" uid="uid://ci85a1hapm7qf" path="res://art/MainMenuJpg/AnimatedOffice-0003.jpg" id="5_h2bpp"]
+[ext_resource type="Texture2D" uid="uid://b0nllowchnp2n" path="res://art/MainMenuJpg/AnimatedOffice-0004.jpg" id="6_ulrvu"]
+[ext_resource type="Texture2D" uid="uid://c1u5fhfud16oo" path="res://art/MainMenuJpg/AnimatedOffice-0005.jpg" id="7_qlu3c"]
+[ext_resource type="Texture2D" uid="uid://cx8v0tvnetgye" path="res://art/MainMenuJpg/AnimatedOffice-0006.jpg" id="8_c7e2w"]
+[ext_resource type="Texture2D" uid="uid://brptaqhdyi4k4" path="res://art/MainMenuJpg/AnimatedOffice-0007.jpg" id="9_e8n82"]
+[ext_resource type="Texture2D" uid="uid://fjcgikdwr7ak" path="res://art/MainMenuJpg/AnimatedOffice-0008.jpg" id="10_a6q4s"]
+[ext_resource type="Texture2D" uid="uid://nj22ona853c1" path="res://art/MainMenuJpg/AnimatedOffice-0009.jpg" id="11_oa3ta"]
+[ext_resource type="Texture2D" uid="uid://c1nlov7nj8rom" path="res://art/MainMenuJpg/AnimatedOffice-0010.jpg" id="12_iulet"]
+[ext_resource type="Texture2D" uid="uid://r33lqimcqt7e" path="res://art/MainMenuJpg/AnimatedOffice-0011.jpg" id="13_73isa"]
+[ext_resource type="Texture2D" uid="uid://be4cr4855iy5y" path="res://art/MainMenuJpg/AnimatedOffice-0012.jpg" id="14_pdo2y"]
+[ext_resource type="Texture2D" uid="uid://c004hctwbigo6" path="res://art/MainMenuJpg/AnimatedOffice-0013.jpg" id="15_hdv78"]
+[ext_resource type="Texture2D" uid="uid://gniw5g5tk7hc" path="res://art/MainMenuJpg/AnimatedOffice-0014.jpg" id="16_0u0j5"]
+[ext_resource type="Texture2D" uid="uid://dooacs65ngka3" path="res://art/MainMenuJpg/AnimatedOffice-0015.jpg" id="17_63qbo"]
+[ext_resource type="Texture2D" uid="uid://x5ie7qt3sl1m" path="res://art/MainMenuJpg/AnimatedOffice-0016.jpg" id="18_jwkfn"]
+[ext_resource type="Texture2D" uid="uid://5f2y13sepb65" path="res://art/MainMenuJpg/AnimatedOffice-0017.jpg" id="19_efmr7"]
+[ext_resource type="Texture2D" uid="uid://dg5wrmiumg3c5" path="res://art/MainMenuJpg/AnimatedOffice-0018.jpg" id="20_0bjs7"]
+[ext_resource type="Texture2D" uid="uid://bx3rqyleruftr" path="res://art/MainMenuJpg/AnimatedOffice-0019.jpg" id="21_kagyy"]
+[ext_resource type="Texture2D" uid="uid://bg6oagrl1a6e7" path="res://art/MainMenuJpg/AnimatedOffice-0020.jpg" id="22_hqnv7"]
+[ext_resource type="Texture2D" uid="uid://dutbv5wys0opx" path="res://art/MainMenuJpg/AnimatedOffice-0021.jpg" id="23_r2gay"]
+[ext_resource type="Texture2D" uid="uid://i8irnyc2sdb0" path="res://art/MainMenuJpg/AnimatedOffice-0022.jpg" id="24_wm76v"]
+[ext_resource type="Texture2D" uid="uid://6rvc5ki7y200" path="res://art/MainMenuJpg/AnimatedOffice-0023.jpg" id="25_ao1ml"]
+[ext_resource type="Texture2D" uid="uid://26opuli4e078" path="res://art/MainMenuJpg/AnimatedOffice-0024.jpg" id="26_p3luy"]
+[ext_resource type="Texture2D" uid="uid://ijeegcno411s" path="res://art/MainMenuJpg/AnimatedOffice-0025.jpg" id="27_wxknf"]
+[ext_resource type="Texture2D" uid="uid://cj0fud77sst3k" path="res://art/MainMenuJpg/AnimatedOffice-0026.jpg" id="28_8oxm1"]
+[ext_resource type="Texture2D" uid="uid://cy68gy7ks656e" path="res://art/MainMenuJpg/AnimatedOffice-0027.jpg" id="29_cfite"]
+[ext_resource type="Texture2D" uid="uid://3ydty5wbn6bk" path="res://art/MainMenuJpg/AnimatedOffice-0028.jpg" id="30_6it4q"]
+[ext_resource type="Texture2D" uid="uid://cgwqsj315h1j8" path="res://art/MainMenuJpg/AnimatedOffice-0029.jpg" id="31_7kpg4"]
+[ext_resource type="Texture2D" uid="uid://8c2whhhd42mf" path="res://art/MainMenuJpg/AnimatedOffice-0030.jpg" id="32_gt5hm"]
+[ext_resource type="Texture2D" uid="uid://bnb7wdwq2f558" path="res://art/MainMenuJpg/AnimatedOffice-0031.jpg" id="33_w55qs"]
+[ext_resource type="Texture2D" uid="uid://smkmatgd6hi2" path="res://art/MainMenuJpg/AnimatedOffice-0032.jpg" id="34_2ki68"]
+[ext_resource type="Texture2D" uid="uid://ofmx16mmb7qh" path="res://art/MainMenuJpg/AnimatedOffice-0033.jpg" id="35_wkn1w"]
+[ext_resource type="Texture2D" uid="uid://does3unqypxtg" path="res://art/MainMenuJpg/AnimatedOffice-0034.jpg" id="36_tyxci"]
+[ext_resource type="Texture2D" uid="uid://b0kqd5wlnuvf2" path="res://art/MainMenuJpg/AnimatedOffice-0035.jpg" id="37_yenk4"]
 
-[sub_resource type="Gradient" id="Gradient_3v6qb"]
+[sub_resource type="Gradient" id="Gradient_ryeo0"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_bmw3h"]
-gradient = SubResource("Gradient_3v6qb")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d0hx7"]
+gradient = SubResource("Gradient_ryeo0")
 width = 50
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qy6x0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bhe1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_coyy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sylk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h2bpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ulrvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qlu3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c7e2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e8n82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a6q4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oa3ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iulet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_73isa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pdo2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hdv78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0u0j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_63qbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jwkfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_efmr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0bjs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kagyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hqnv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r2gay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wm76v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ao1ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p3luy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wxknf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8oxm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_cfite")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6it4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7kpg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gt5hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_w55qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2ki68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wkn1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tyxci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_yenk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xeens"]
 line_spacing = 10.0
 shadow_size = 4
 shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wmhx"]
-shader = ExtResource("1_tq7jp")
-shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
-shader_parameter/line_thickness = 5.447
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_q3qji")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,8 +180,15 @@ offset_right = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.10676, 144.333)
-texture = SubResource("GradientTexture1D_bmw3h")
+texture = SubResource("GradientTexture1D_d0hx7")
 expand_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.180392)
+position = Vector2(128, 71)
+scale = Vector2(0.4, 0.338028)
+sprite_frames = SubResource("SpriteFrames_qy6x0")
+autoplay = "default"
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 8
@@ -52,7 +203,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "SDL Security Game"
+text = "Secure the Code"
 label_settings = SubResource("LabelSettings_xeens")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -60,9 +211,9 @@ vertical_alignment = 1
 [node name="Label" type="Label" parent="."]
 offset_left = 9.0
 offset_top = 44.0
-offset_right = 165.0
-offset_bottom = 126.0
-text = "Nach  erfolgreichen Bestehen des Sprints bekommst du zum Glück noch die Möglichkeit weitere User Stories oder Security Cards in dein Deck aufzunehmen. Du hast sie in diesem Sprint sozusagen abgearbeitet ;-)!
+offset_right = 142.0
+offset_bottom = 138.0
+text = "Nach erfolgreichen Bestehen des Sprints bekommst du zum Glück noch die Möglichkeit weitere User Stories oder Security Cards in dein Deck aufzunehmen. Du hast sie in diesem Sprint sozusagen abgearbeitet.
 
 Klicke dabei einfach auf die Karte die du nehmen willst - und schau sie dir im Detail an."
 autowrap_mode = 3
@@ -78,6 +229,7 @@ text = "Weiter"
 
 [node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
 show_behind_parent = true
+layout_mode = 0
 offset_right = 35.0
 offset_bottom = 16.0
 texture = ExtResource("2_7k53w")
@@ -86,24 +238,25 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 8
 
-[node name="SdlPractice" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_8wmhx")
-position = Vector2(48.0625, 10.375)
-scale = Vector2(0.0561719, 0.0517578)
-texture = ExtResource("2_45v1i")
-
 [node name="Backgroundv2" type="Sprite2D" parent="."]
 position = Vector2(214.5, 61.3125)
 scale = Vector2(0.0359008, 0.0257865)
 
-[node name="CardRewards" type="Sprite2D" parent="."]
-position = Vector2(205.469, 26)
-scale = Vector2(0.0567696, 0.0618557)
-texture = ExtResource("3_odaaa")
+[node name="SprintRewardsScreen" type="Sprite2D" parent="."]
+position = Vector2(197, 64)
+scale = Vector2(0.0681746, 0.0725396)
+texture = ExtResource("3_wwa45")
 
-[node name="CardRewardTooltip" type="Sprite2D" parent="."]
-position = Vector2(205.359, 80.8594)
-scale = Vector2(0.0536073, 0.0594651)
-texture = ExtResource("4_nyfgn")
+[node name="BackgroundNineRect" type="NinePatchRect" parent="SprintRewardsScreen"]
+show_behind_parent = true
+offset_left = -821.0
+offset_top = -469.0
+offset_right = 821.0
+offset_bottom = 482.0
+texture = ExtResource("2_7k53w")
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

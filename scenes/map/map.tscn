@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://mb6x3td5f3fs" path="res://art/Background Sprint v1 downscale.png" id="3_4y43d"]
 [ext_resource type="Texture2D" uid="uid://b870jbri4texf" path="res://art/Background2.png" id="4_poqgu"]
 [ext_resource type="Texture2D" uid="uid://cxcygjgqeg8gs" path="res://art/Background1.png" id="4_v5oyx"]
-[ext_resource type="Texture2D" uid="uid://bsrf35satgir6" path="res://art/Background4.png" id="6_q14ej"]
+[ext_resource type="Texture2D" uid="uid://bswr867x3k4ta" path="res://scenes/run/Background4.png" id="6_fu2fb"]
 [ext_resource type="Texture2D" uid="uid://8sf35x8rycbc" path="res://art/Background3.png" id="7_vrn0n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpxpe"]
@@ -38,7 +38,7 @@ texture = ExtResource("4_v5oyx")
 [node name="Background4" type="Sprite2D" parent="."]
 position = Vector2(139, -1002.63)
 scale = Vector2(0.0264061, 0.0247084)
-texture = ExtResource("6_q14ej")
+texture = ExtResource("6_fu2fb")
 
 [node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(139.25, -682.25)

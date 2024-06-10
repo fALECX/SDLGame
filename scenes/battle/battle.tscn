@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cahno8aso5net"]
+[gd_scene load_steps=43 format=3 uid="uid://cahno8aso5net"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_4s751"]
 [ext_resource type="PackedScene" uid="uid://d0efyathkfg74" path="res://scenes/enemy/enemy.tscn" id="2_02s5s"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dmb4e5f8r7wdh" path="res://art/Battle7Serverf.png" id="11_a67wb"]
 [ext_resource type="PackedScene" uid="uid://chry0sgk7t0yf" path="res://scenes/ui/tooltip.tscn" id="12_qx741"]
 [ext_resource type="Texture2D" uid="uid://dgkwolxcrfvx0" path="res://art/BackgroundDotGridCards.png" id="12_v6m8y"]
+[ext_resource type="Texture2D" uid="uid://cui5j27kfeeq3" path="res://art/Battle8Server.png" id="12_xpmwd"]
 [ext_resource type="Theme" uid="uid://c8cqncsqlplyu" path="res://main_theme.tres" id="13_523u4"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_qvh8t"]
 [ext_resource type="PackedScene" uid="uid://bcdmoid8212ip" path="res://scenes/ui/card_pile_opener.tscn" id="17_8fteu"]
@@ -93,6 +94,12 @@ visible = false
 position = Vector2(127.5, 47.5)
 scale = Vector2(0.133854, 0.0972222)
 texture = ExtResource("11_a67wb")
+
+[node name="Battle8Server" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(127.5, 47.5)
+scale = Vector2(0.133854, 0.0972222)
+texture = ExtResource("12_xpmwd")
 
 [node name="BackgroundDotGridCards" type="Sprite2D" parent="."]
 visible = false
@@ -369,15 +376,15 @@ texture = ExtResource("32_2dt72")
 [node name="AlterBekannter2" type="Sprite2D" parent="SprintStory"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(128.977, 72.053)
-scale = Vector2(0.0266189, 0.0246478)
+position = Vector2(128, 72)
+scale = Vector2(0.0268219, 0.0250086)
 texture = ExtResource("33_f71gw")
 
 [node name="AlterBekannter1" type="Sprite2D" parent="SprintStory"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(127.988, 74.428)
-scale = Vector2(0.0266164, 0.025288)
+position = Vector2(128, 75)
+scale = Vector2(0.0268219, 0.0250991)
 texture = ExtResource("34_dw0w1")
 
 [node name="Cybercrime" type="Sprite2D" parent="SprintStory"]

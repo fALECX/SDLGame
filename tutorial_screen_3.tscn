@@ -40,11 +40,11 @@
 [ext_resource type="Texture2D" uid="uid://b0kqd5wlnuvf2" path="res://art/MainMenuJpg/AnimatedOffice-0035.jpg" id="37_0sf20"]
 [ext_resource type="Texture2D" uid="uid://hart22petdvk" path="res://Whole Desk Tutorial Pic.png" id="39_thirv"]
 
-[sub_resource type="Gradient" id="Gradient_2f4xj"]
+[sub_resource type="Gradient" id="Gradient_cc2or"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jq7hj"]
-gradient = SubResource("Gradient_2f4xj")
+gradient = SubResource("Gradient_cc2or")
 width = 50
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_81hk5"]
@@ -196,9 +196,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
+offset_left = 35.0
 offset_top = 1.0
-offset_right = 157.0
+offset_right = 217.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2

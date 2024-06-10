@@ -1,12 +1,53 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://dpmgf25dwoaua"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://dpmgf25dwoaua"]
 
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_e5g4d"]
 [ext_resource type="Resource" uid="uid://btxc1odh1jmst" path="res://characters/warrior/cards/sdl1common.tres" id="1_xsuuh"]
 [ext_resource type="Resource" uid="uid://d4c8yfl4f4sat" path="res://characters/warrior/cards/sdl2common.tres" id="2_1nhu1"]
-[ext_resource type="Resource" uid="uid://n3va254ct6b3" path="res://characters/warrior/cards/asr_sdl3_duplicatetest.tres" id="3_ar5fl"]
+[ext_resource type="Texture2D" uid="uid://eqfx53s73yrc" path="res://art/SDL alte karten mit nummer/SDL 3 Quality Gate.png" id="3_skln3"]
 [ext_resource type="Resource" uid="uid://cgte4s6aec68k" path="res://characters/warrior/cards/sdl5rare.tres" id="4_m571l"]
-[ext_resource type="Resource" uid="uid://bs2avd7k0xgfx" path="res://characters/warrior/cards/qualitygates_sdl3.tres" id="5_tpwvk"]
+
+[sub_resource type="GDScript" id="GDScript_qov00"]
+script/source = "extends Card
+
+var base_damage := 4
+
+
+func get_default_tooltip() -> String:
+	return tooltip_text % base_damage
+
+
+func get_updated_tooltip(player_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var modified_dmg := player_modifiers.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
+
+	if enemy_modifiers:
+		modified_dmg = enemy_modifiers.get_modified_value(modified_dmg, Modifier.Type.DMG_TAKEN)
+		
+	return tooltip_text % modified_dmg
+
+
+func apply_effects(targets: Array[Node], modifiers: ModifierHandler) -> void:
+	var damage_effect := DamageEffect.new()
+	damage_effect.amount = modifiers.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
+	damage_effect.sound = sound
+	damage_effect.execute(targets)
+"
+
+[sub_resource type="Resource" id="Resource_28p7n"]
+script = SubResource("GDScript_qov00")
+id = "asr:s"
+type = 0
+rarity = 0
+target = 2
+cost = 2
+exhausts = false
+icon = ExtResource("3_skln3")
+tooltip_text = "[center]
+[color=red][u] Attack Surface Reduction (ASR) - SDL 3  [/u][/color] 
+
+Umfasst ähnlich wie die Bedrohungsanalyse alle Tätigkeiten die es aus Sicht der Angreifer erschwert einen Angriffspunkt in der Software zu finden. Dazu gehört: \"shutting off or restricting access to system services, applying the principle of least privilege, and employing layered defenses wherever possible.\"
+
+[color=\"ff0000\"]Füge allen Angreifern %s Schaden zu.[/color] [/center]"
 
 [resource]
 script = ExtResource("1_e5g4d")
-cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_xsuuh"), ExtResource("1_xsuuh"), ExtResource("2_1nhu1"), ExtResource("2_1nhu1"), ExtResource("3_ar5fl"), ExtResource("3_ar5fl"), ExtResource("4_m571l"), ExtResource("4_m571l"), ExtResource("4_m571l"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk"), ExtResource("5_tpwvk")])
+cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_xsuuh"), ExtResource("1_xsuuh"), ExtResource("2_1nhu1"), ExtResource("2_1nhu1"), SubResource("Resource_28p7n"), SubResource("Resource_28p7n"), ExtResource("4_m571l"), ExtResource("4_m571l"), ExtResource("4_m571l")])

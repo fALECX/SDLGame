@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=8 format=3 uid="uid://bcamfj71xd6x1"]
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=10 format=3 uid="uid://bcamfj71xd6x1"]
 
 [ext_resource type="Script" path="res://custom_resources/battle_stats_pool.gd" id="1_0b7nw"]
 [ext_resource type="Resource" uid="uid://d4n1weobmw711" path="res://battles/battle1_kunde_tier0.tres" id="1_ydihg"]
-[ext_resource type="Resource" uid="uid://cuuiyfwaku0qs" path="res://battles/battle2_robots_tier0.tres" id="2_u6mm0"]
+[ext_resource type="Resource" uid="uid://cuuiyfwaku0qs" path="res://battles/battle2_robots_tier_1.tres" id="2_8ja02"]
 [ext_resource type="Resource" uid="uid://g15y0vtuysbb" path="res://battles/battle3_2robots_tier1.tres" id="3_vutkt"]
-[ext_resource type="Resource" uid="uid://bdv5sq5xskuui" path="res://battles/battle5_hacker_robot_tier2.tres" id="4_6ae2b"]
 [ext_resource type="Resource" uid="uid://fac8mttp6u6m" path="res://battles/battle4_hacker_tier2.tres" id="4_g4wdw"]
+[ext_resource type="Resource" uid="uid://bdv5sq5xskuui" path="res://battles/battle5_hacker_robot_tier_1.tres" id="5_5enug"]
 [ext_resource type="Resource" uid="uid://bedaud1ckrrwh" path="res://battles/battle6_hacker3_tier2.tres" id="5_x1e6q"]
+[ext_resource type="Resource" uid="uid://brhrpm4nlekta" path="res://battles/battle7_robotstrong_tier2.tres" id="7_335la"]
+[ext_resource type="Resource" uid="uid://c2verkmxw8yni" path="res://battles/battle8_malware_tier2.tres" id="8_iphwg"]
 
 [resource]
 script = ExtResource("1_0b7nw")
-pool = Array[Resource("res://custom_resources/battle_stats.gd")]([ExtResource("1_ydihg"), ExtResource("2_u6mm0"), ExtResource("3_vutkt"), ExtResource("4_g4wdw"), ExtResource("4_6ae2b"), ExtResource("5_x1e6q")])
+pool = Array[Resource("res://custom_resources/battle_stats.gd")]([ExtResource("1_ydihg"), ExtResource("2_8ja02"), ExtResource("3_vutkt"), ExtResource("4_g4wdw"), ExtResource("5_5enug"), ExtResource("5_x1e6q"), ExtResource("7_335la"), ExtResource("8_iphwg")])

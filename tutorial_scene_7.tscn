@@ -1,31 +1,178 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvc5w288a4bdk"]
+[gd_scene load_steps=45 format=3 uid="uid://cvc5w288a4bdk"]
 
-[ext_resource type="Shader" path="res://scenes/map/outeroutline.gdshader" id="1_7y4b1"]
 [ext_resource type="Script" path="res://tutorial_scene_7.gd" id="1_itakj"]
+[ext_resource type="Texture2D" uid="uid://do04rit3smcbw" path="res://art/MainMenuJpg/AnimatedOffice-0000.jpg" id="2_0o70k"]
 [ext_resource type="Texture2D" uid="uid://bmqma01c44vqi" path="res://scenes/ui/pixil-frame-0 (8).png" id="2_hs5o0"]
-[ext_resource type="Texture2D" uid="uid://cblsh65u85yem" path="res://SDL practice.png" id="2_sp6gk"]
+[ext_resource type="Texture2D" uid="uid://q448yiyvee5d" path="res://art/Customer Satisfaction.png" id="3_4svv7"]
+[ext_resource type="Texture2D" uid="uid://nvypc2ikbs53" path="res://art/MainMenuJpg/AnimatedOffice-0001.jpg" id="3_gk7yo"]
+[ext_resource type="Texture2D" uid="uid://oigorjp6kvp4" path="res://statuses/red cross.png" id="4_tpbk8"]
+[ext_resource type="Texture2D" uid="uid://dn3gqqpmmgnoe" path="res://art/MainMenuJpg/AnimatedOffice-0002.jpg" id="4_usiim"]
+[ext_resource type="Texture2D" uid="uid://ci85a1hapm7qf" path="res://art/MainMenuJpg/AnimatedOffice-0003.jpg" id="5_xxs0a"]
+[ext_resource type="Texture2D" uid="uid://b0nllowchnp2n" path="res://art/MainMenuJpg/AnimatedOffice-0004.jpg" id="6_yfnae"]
+[ext_resource type="Texture2D" uid="uid://c1u5fhfud16oo" path="res://art/MainMenuJpg/AnimatedOffice-0005.jpg" id="7_yh8u5"]
+[ext_resource type="Texture2D" uid="uid://cx8v0tvnetgye" path="res://art/MainMenuJpg/AnimatedOffice-0006.jpg" id="8_6e48d"]
+[ext_resource type="Texture2D" uid="uid://brptaqhdyi4k4" path="res://art/MainMenuJpg/AnimatedOffice-0007.jpg" id="9_jrig2"]
+[ext_resource type="Texture2D" uid="uid://fjcgikdwr7ak" path="res://art/MainMenuJpg/AnimatedOffice-0008.jpg" id="10_itui4"]
+[ext_resource type="Texture2D" uid="uid://nj22ona853c1" path="res://art/MainMenuJpg/AnimatedOffice-0009.jpg" id="11_16jxh"]
+[ext_resource type="Texture2D" uid="uid://c1nlov7nj8rom" path="res://art/MainMenuJpg/AnimatedOffice-0010.jpg" id="12_kr3ad"]
+[ext_resource type="Texture2D" uid="uid://r33lqimcqt7e" path="res://art/MainMenuJpg/AnimatedOffice-0011.jpg" id="13_x1tko"]
+[ext_resource type="Texture2D" uid="uid://be4cr4855iy5y" path="res://art/MainMenuJpg/AnimatedOffice-0012.jpg" id="14_4b2fs"]
+[ext_resource type="Texture2D" uid="uid://c004hctwbigo6" path="res://art/MainMenuJpg/AnimatedOffice-0013.jpg" id="15_5ersq"]
+[ext_resource type="Texture2D" uid="uid://gniw5g5tk7hc" path="res://art/MainMenuJpg/AnimatedOffice-0014.jpg" id="16_kj0ic"]
+[ext_resource type="Texture2D" uid="uid://dooacs65ngka3" path="res://art/MainMenuJpg/AnimatedOffice-0015.jpg" id="17_ymbbp"]
+[ext_resource type="Texture2D" uid="uid://x5ie7qt3sl1m" path="res://art/MainMenuJpg/AnimatedOffice-0016.jpg" id="18_e4j5a"]
+[ext_resource type="Texture2D" uid="uid://5f2y13sepb65" path="res://art/MainMenuJpg/AnimatedOffice-0017.jpg" id="19_avioi"]
+[ext_resource type="Texture2D" uid="uid://dg5wrmiumg3c5" path="res://art/MainMenuJpg/AnimatedOffice-0018.jpg" id="20_yxinf"]
+[ext_resource type="Texture2D" uid="uid://bx3rqyleruftr" path="res://art/MainMenuJpg/AnimatedOffice-0019.jpg" id="21_wdav5"]
+[ext_resource type="Texture2D" uid="uid://bg6oagrl1a6e7" path="res://art/MainMenuJpg/AnimatedOffice-0020.jpg" id="22_7xkyk"]
+[ext_resource type="Texture2D" uid="uid://dutbv5wys0opx" path="res://art/MainMenuJpg/AnimatedOffice-0021.jpg" id="23_207sj"]
+[ext_resource type="Texture2D" uid="uid://i8irnyc2sdb0" path="res://art/MainMenuJpg/AnimatedOffice-0022.jpg" id="24_jj16q"]
+[ext_resource type="Texture2D" uid="uid://6rvc5ki7y200" path="res://art/MainMenuJpg/AnimatedOffice-0023.jpg" id="25_8sbu2"]
+[ext_resource type="Texture2D" uid="uid://26opuli4e078" path="res://art/MainMenuJpg/AnimatedOffice-0024.jpg" id="26_ca704"]
+[ext_resource type="Texture2D" uid="uid://ijeegcno411s" path="res://art/MainMenuJpg/AnimatedOffice-0025.jpg" id="27_da0n1"]
+[ext_resource type="Texture2D" uid="uid://cj0fud77sst3k" path="res://art/MainMenuJpg/AnimatedOffice-0026.jpg" id="28_wll50"]
+[ext_resource type="Texture2D" uid="uid://cy68gy7ks656e" path="res://art/MainMenuJpg/AnimatedOffice-0027.jpg" id="29_cygh1"]
+[ext_resource type="Texture2D" uid="uid://3ydty5wbn6bk" path="res://art/MainMenuJpg/AnimatedOffice-0028.jpg" id="30_skdnv"]
+[ext_resource type="Texture2D" uid="uid://cgwqsj315h1j8" path="res://art/MainMenuJpg/AnimatedOffice-0029.jpg" id="31_i4wmm"]
+[ext_resource type="Texture2D" uid="uid://8c2whhhd42mf" path="res://art/MainMenuJpg/AnimatedOffice-0030.jpg" id="32_30gkt"]
+[ext_resource type="Texture2D" uid="uid://bnb7wdwq2f558" path="res://art/MainMenuJpg/AnimatedOffice-0031.jpg" id="33_0lrg2"]
+[ext_resource type="Texture2D" uid="uid://smkmatgd6hi2" path="res://art/MainMenuJpg/AnimatedOffice-0032.jpg" id="34_na6dr"]
+[ext_resource type="Texture2D" uid="uid://ofmx16mmb7qh" path="res://art/MainMenuJpg/AnimatedOffice-0033.jpg" id="35_tu5uu"]
+[ext_resource type="Texture2D" uid="uid://does3unqypxtg" path="res://art/MainMenuJpg/AnimatedOffice-0034.jpg" id="36_7mrbn"]
+[ext_resource type="Texture2D" uid="uid://b0kqd5wlnuvf2" path="res://art/MainMenuJpg/AnimatedOffice-0035.jpg" id="37_bnxhp"]
 
-[sub_resource type="Gradient" id="Gradient_b1174"]
+[sub_resource type="Gradient" id="Gradient_yd64p"]
 colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0.054902, 0, 0.0588235, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qpput"]
-gradient = SubResource("Gradient_b1174")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r83qw"]
+gradient = SubResource("Gradient_yd64p")
 width = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_761p8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hrhq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0o70k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gk7yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_usiim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xxs0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yfnae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yh8u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6e48d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jrig2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_itui4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_16jxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kr3ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x1tko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4b2fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5ersq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kj0ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ymbbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e4j5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_avioi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yxinf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wdav5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7xkyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_207sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jj16q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8sbu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ca704")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_da0n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_wll50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_cygh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_skdnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_i4wmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_30gkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0lrg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_na6dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_tu5uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7mrbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_bnxhp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rxr8"]
 line_spacing = 10.0
 shadow_size = 4
 shadow_color = Color(0.878431, 0.564706, 0.580392, 0.282353)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xckg6"]
-shader = ExtResource("1_7y4b1")
-shader_parameter/line_color = Color(0.607843, 0.607843, 0.607843, 1)
-shader_parameter/line_thickness = 5.447
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_itakj")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,8 +181,15 @@ offset_right = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.10676, 144.333)
-texture = SubResource("GradientTexture1D_qpput")
+texture = SubResource("GradientTexture1D_r83qw")
 expand_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.180392)
+position = Vector2(128, 71)
+scale = Vector2(0.4, 0.338028)
+sprite_frames = SubResource("SpriteFrames_0hrhq")
+autoplay = "default"
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 8
@@ -43,55 +197,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = 14.0
-offset_right = 255.0
-offset_bottom = 42.0
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 251.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "SDL Security Game"
-label_settings = SubResource("LabelSettings_761p8")
+text = "Secure the Code"
+label_settings = SubResource("LabelSettings_1rxr8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 40.0
-offset_right = 240.0
-offset_bottom = 88.0
-text = "Keine Fragen mehr?
+offset_left = 3.0
+offset_top = 23.0
+offset_right = 156.0
+offset_bottom = 141.0
+text = "Doch aufgepasst! Nicht jede Sicherheitspraktika macht zu jedem Zeitpunkt Sinn! Lese dir die Informationen aufmerksam durch, um keine falsche Karte zu nehmen!
 
-Dann los gehts - und kämpf dich durch die Sprints! "
+Für jeden abgeschlossenen Sprint bekommst du Kundenzufriedenheit. Diese brauchst du um zu gewinnen. 
+
+Solltest du nicht mehr weiter wissen - schaue doch in die Encyclopedia!
+
+Keine Fragen mehr? Los gehts.
+"
 autowrap_mode = 3
 
 [node name="Continue" type="Button" parent="."]
-offset_left = 94.0
-offset_top = 95.0
-offset_right = 158.0
-offset_bottom = 123.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.882353, 0, 0.0666667, 1)
-text = "Ich hab bock!"
+offset_left = 212.0
+offset_top = 128.0
+offset_right = 249.0
+offset_bottom = 140.0
+text = "Los Gehts"
 
 [node name="BackgroundNineRect" type="NinePatchRect" parent="Continue"]
 show_behind_parent = true
-offset_right = 65.0
-offset_bottom = 28.0
+offset_top = -1.0
+offset_right = 38.0
+offset_bottom = 13.0
 texture = ExtResource("2_hs5o0")
 patch_margin_left = 8
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 8
 
-[node name="SdlPractice" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_xckg6")
-position = Vector2(48.0625, 10.375)
-scale = Vector2(0.0561719, 0.0517578)
-texture = ExtResource("2_sp6gk")
-
 [node name="Backgroundv2" type="Sprite2D" parent="."]
 position = Vector2(214.5, 61.3125)
 scale = Vector2(0.0359008, 0.0257865)
+
+[node name="CustomerSatisfaction" type="Sprite2D" parent="."]
+position = Vector2(204, 71)
+scale = Vector2(0.0826898, 0.0754076)
+texture = ExtResource("3_4svv7")
+
+[node name="RedCross" type="Sprite2D" parent="."]
+position = Vector2(228, 47)
+scale = Vector2(0.0340044, 0.0331257)
+texture = ExtResource("4_tpbk8")
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

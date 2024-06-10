@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://l026dc3j33au"]
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://d20souek2igca"]
 
-[ext_resource type="Texture2D" uid="uid://bw6se7ei8tiyk" path="res://art/poison.png" id="1_3lcsi"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_xh2l6"]
-[ext_resource type="AudioStream" uid="uid://bofaerdnasrjx" path="res://art/true_strength.ogg" id="3_xd7s8"]
+[ext_resource type="Texture2D" uid="uid://i1dhbd0kxtfg" path="res://common_cards/UserStoryFailed.png" id="1_5ppqj"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_oi6sd"]
+[ext_resource type="AudioStream" uid="uid://bofaerdnasrjx" path="res://art/true_strength.ogg" id="3_dm6oc"]
 
 [resource]
-script = ExtResource("2_xh2l6")
-id = "toxin"
+script = ExtResource("2_oi6sd")
+id = "sdltoxin"
 type = 1
 rarity = 0
 target = 0
 cost = 1
 exhausts = true
-icon = ExtResource("1_3lcsi")
-tooltip_text = "[center]Slows you down[/center]."
-sound = ExtResource("3_xd7s8")
+icon = ExtResource("1_5ppqj")
+tooltip_text = "[center][color=red][u] USER STORY FAILED [/u][/color]
+
+[color=\"ffdf00\"]Dein Gegenüber bringt eure Planung durcheinander.[/color][/center]"
+sound = ExtResource("3_dm6oc")

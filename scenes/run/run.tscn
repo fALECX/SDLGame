@@ -373,13 +373,6 @@ text = "Zum Sprint..."
 
 [node name="BackgroundImage" type="CanvasLayer" parent="."]
 
-[node name="ReturnToDesk" type="Button" parent="BackgroundImage"]
-unique_name_in_owner = true
-offset_left = 12.0
-offset_top = 116.0
-offset_right = 40.0
-offset_bottom = 123.0
-
 [node name="Programm" type="Sprite2D" parent="BackgroundImage"]
 self_modulate = Color(1, 1, 1, 0.666667)
 position = Vector2(129.5, 64)
@@ -414,5 +407,13 @@ visible = false
 position = Vector2(127, 75)
 scale = Vector2(0.432546, 0.325167)
 texture = ExtResource("17_c3bh4")
+
+[node name="ReturnToDesk" type="Button" parent="BackgroundImage"]
+unique_name_in_owner = true
+top_level = true
+offset_left = 10.0
+offset_top = 114.0
+offset_right = 42.0
+offset_bottom = 124.0
 
 [connection signal="pressed" from="BackgroundImage/ReturnToDesk" to="." method="_on_return_to_desk_pressed"]

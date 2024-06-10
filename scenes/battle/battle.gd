@@ -17,6 +17,7 @@ extends Node2D
 @onready var battle_5: Sprite2D = $Battle5Server
 @onready var battle_6: Sprite2D = $Battle6Server
 @onready var battle_7: Sprite2D = $Battle7Server
+@onready var battle_8: Sprite2D = $Battle8Server
 @onready var backgroundcardgrid: Sprite2D = $BackgroundDotGridCards
 @onready var sprintstory: CanvasLayer = $SprintStory
 @onready var einleitung: Sprite2D = %Einleitung
@@ -52,32 +53,42 @@ func floors_climbed_update(floors :int) -> void:
 	if(floors_climbed == 2):
 		backgroundcardgrid.visible = true
 		battle_2.visible = true
+		sprintstory.visible = true
 		%AlterBekannter1.visible = true
 		%AlterBekannter2.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 3):
 		backgroundcardgrid.visible = true
 		%Cybercrime.visible = true
+		sprintstory.visible = true
 		battle_3.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 4):
+		sprintstory.visible = true
 		backgroundcardgrid.visible = true
 		%BugHunting.visible = true
 		battle_4.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 5):
+		sprintstory.visible = true
 		backgroundcardgrid.visible = true
 		%TrojanHorse.visible = true
 		battle_5.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 6):
+		sprintstory.visible = true
 		backgroundcardgrid.visible = true
 		%Release.visible = true
 		battle_6.visible = true
 		Events.show_player.emit()
 	if(floors_climbed == 7):
+		sprintstory.visible = true
 		backgroundcardgrid.visible = true
 		%Gegnerteam.visible = true
+		battle_7.visible = true
+		Events.show_player.emit()
+	if(floors_climbed == 8):
+		backgroundcardgrid.visible = true
 		battle_7.visible = true
 		Events.show_player.emit()
 
@@ -86,8 +97,8 @@ func floors_climbed_changed(floors_given: int) -> void:
 	floors_climbed = floors_given
 
 func _on_to_battle_button_pressed() -> void:
-	if(floors_climbed == 2 && $CanvasLayer/AlterBekannter1.visible == true):
-		$CanvasLayer/AlterBekannter1.visible = false
+	if floors_climbed == 2 and %AlterBekannter1.visible == true:
+		%AlterBekannter1.visible = false
 	else:
 		sprintstory.visible = false
 

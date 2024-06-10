@@ -1,6 +1,6 @@
 extends Node2D
 
-const TUTORIAL_SCENE_4 = preload("res://tutorial_scene_4.tscn")
+const TUTORIAL_SCENE_3_5 = preload("res://tutorial_screen_3_5.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,5 +12,5 @@ func _process(delta):
 	pass
 
 func _on_continue_pressed():
-	print("tutorial scene 4")
-	get_tree().change_scene_to_packed(TUTORIAL_SCENE_4)
+	print("tutorial scene 3_5")
+	get_tree().change_scene_to_packed(TUTORIAL_SCENE_3_5)

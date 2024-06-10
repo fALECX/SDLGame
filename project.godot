@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Deck Builder Tutorial"
+config/name="Secure the Code"
 config/tags=PackedStringArray("gamelab")
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
@@ -79,4 +79,4 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
