@@ -48,7 +48,7 @@ func _ready() -> void:
 	print("nach free queue")
 
 	run_stats = RunStats.new()
-	run_stats.gold_changed.connect(func(): print("gold: %s" % run_stats.gold))
+	run_stats.zufriedenheit_changed.connect(func(): print("gold: %s" % run_stats.kundenzufriedenheit))
 	character_stats = preload("res://characters/warrior/warrior.tres").create_instance()
 	card_rewards.card_reward_selected.connect(_on_card_reward_taken)
 	#print("aus ready von battle_reward.gd: lade custom draftable cards")
@@ -175,7 +175,7 @@ func _on_gold_reward_taken(amount: int) -> void:
 	if not run_stats:
 		return
 
-	run_stats.gold += amount
+	run_stats.kundenzufriedenheit += amount
 
 
 var cards_taken := 0

@@ -109,13 +109,13 @@ func _on_back_button_pressed() -> void:
 
 func _on_shop_card_bought(card: Card, gold_cost: int) -> void:
 	char_stats.deck.add_card(card)
-	run_stats.gold -= gold_cost
+	run_stats.kundenzufriedenheit -= gold_cost
 	_update_items()
 
 
 func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 	relic_handler.add_relic(relic)
-	run_stats.gold -= gold_cost
+	run_stats.kundenzufriedenheit -= gold_cost
 	
 	if relic is CouponsRelic:
 		var coupons_relic := relic as CouponsRelic

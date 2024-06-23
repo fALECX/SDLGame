@@ -13,10 +13,10 @@ func _ready() -> void:
 func set_run_stats(new_value: RunStats) -> void:
 	run_stats = new_value
 	
-	if not run_stats.gold_changed.is_connected(_update_gold):
-		run_stats.gold_changed.connect(_update_gold)
+	if not run_stats.zufriedenheit_changed.is_connected(_update_gold):
+		run_stats.zufriedenheit_changed.connect(_update_gold)
 		_update_gold()
 
 
 func _update_gold() -> void:
-	label.text = str(run_stats.gold)
+	label.text = str(run_stats.kundenzufriedenheit)

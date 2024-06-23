@@ -1,10 +1,10 @@
 class_name Run
 extends Node
 
-const MAIN_MENU_SCENE = preload("res://scenes/ui/main_menu.tscn")
-const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
-const BATTLE_REWARD_SCENE := preload("res://scenes/battle_reward/battle_reward.tscn")
-const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
+const MAIN_MENU_SCENE     =  preload("res://scenes/ui/main_menu.tscn")
+const BATTLE_SCENE        := preload("res://scenes/battle/battle.tscn")
+const SPRINT_REWARD_SCENE := preload("res://scenes/battle_reward/battle_reward.tscn")
+const CAMPFIRE_SCENE      := preload("res://scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE = preload("res://scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
@@ -155,7 +155,7 @@ func _setup_event_connections() -> void:
 #added function to show floors climbed
 func _show_regular_battle_rewards() -> void:
 	%TopBar.visible = false
-	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	var reward_scene := _change_view(SPRINT_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
@@ -212,13 +212,13 @@ func _on_battle_won() -> void:
 	print("on battle won from run.gd: map.floors_climbed: ", map.floors_climbed, " and MapGenerator.FLOORS: ", MapGenerator.FLOORS)
 	if(map.floors_climbed == MapGenerator.FLOORS):
 		print("floors_climbed == MapGenerator.FLOORS triggered")
-		if(stats.gold > 250):
-			print("gold > 120 triggered")
+		if(stats.kundenzufriedenheit > 250):
+			print("kundenzufriedenheit > 120 triggered")
 			var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 			win_screen.character = character
 			SaveGame.delete_data()
-		if(stats.gold <= 250):
-			print("gold <= 120 triggered")
+		if(stats.kundenzufriedenheit <= 250):
+			print("kundenzufriedenheit <= 120 triggered")
 			var lose_screen := _change_view(LOSE_SCREEN_SCENE) as LoseScreen
 			lose_screen.character = character
 			SaveGame.delete_data()
@@ -228,16 +228,16 @@ func _on_battle_won() -> void:
 		Events.change_cards.emit(floors_climbed_run)
 		_show_regular_battle_rewards()
 
-
+#not needed
 func _on_treasure_room_entered() -> void:
 	var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
 	treasure_scene.relic_handler = relic_handler
 	treasure_scene.char_stats = character
 	treasure_scene.generate_relic()
 
-
+#not needed
 func _on_treasure_room_exited(relic: Relic) -> void:
-	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	var reward_scene := _change_view(SPRINT_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
@@ -249,7 +249,7 @@ func _on_map_exited(room: Room) -> void:
 	_save_run()
 	
 	match room.type:
-		Room.Type.MONSTER:
+		Room.Type.sprint:
 			_on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			_on_treasure_room_entered()

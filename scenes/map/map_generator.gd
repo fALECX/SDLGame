@@ -14,7 +14,7 @@ const CAMPFIRE_ROOM_WEIGHT := 4.0
 @export var battle_stats_pool: BattleStatsPool
 
 var random_room_type_weights = {
-	Room.Type.MONSTER: 0.0,
+	Room.Type.sprint: 0.0,
 	Room.Type.CAMPFIRE: 0.0,
 	Room.Type.SHOP: 0.0
 }
@@ -137,7 +137,7 @@ func _setup_boss_room() -> void:
 
 
 func _setup_random_room_weights() -> void:
-	random_room_type_weights[Room.Type.MONSTER] = MONSTER_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.sprint] = MONSTER_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.CAMPFIRE] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT
 	random_room_type_weights[Room.Type.SHOP] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
 	
@@ -149,48 +149,48 @@ func _setup_room_types() -> void:
 	# first floor is always a battle
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 
 
 	for room: Room in map_data[1]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(1)
 
 	for room: Room in map_data[2]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(1)
 
 	# 3rd floor is always a shop
 	for room: Room in map_data[3]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(1)
 
 	#4th floor is always a monster room tier 2
 	for room: Room in map_data[4]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 	#4th floor is always a monster room tier 2
 	for room: Room in map_data[5]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 	#4th floor is always a monster room tier 2
 	for room: Room in map_data[6]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 	#4th floor is always a monster room tier 2
 	for room: Room in map_data[7]:
 		if room.next_rooms.size() > 0:
-			room.type = Room.Type.MONSTER
+			room.type = Room.Type.sprint
 			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 	#9th floor is always a treasure
@@ -209,7 +209,7 @@ func _setup_room_types() -> void:
 		for room: Room in current_floor:
 			for next_room: Room in room.next_rooms:
 				if next_room.type == Room.Type.NOT_ASSIGNED:
-					room.type = Room.Type.MONSTER
+					room.type = Room.Type.sprint
 
 
 func _set_room_randomly(room_to_set: Room) -> void:
@@ -229,7 +229,7 @@ func _set_room_randomly(room_to_set: Room) -> void:
 		campfire_on_13 = type_candidate == Room.Type.CAMPFIRE and room_to_set.row == 12
 		
 	room_to_set.type = type_candidate
-	if type_candidate == Room.Type.MONSTER:
+	if type_candidate == Room.Type.sprint:
 		var tier_for_monster_rooms := 0 if room_to_set.row <= 2 else 1
 		room_to_set.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_monster_rooms)
 
@@ -266,4 +266,4 @@ func _get_random_room_type_by_weight() -> Room.Type:
 		if random_room_type_weights[type] > roll:
 			return type
 	
-	return Room.Type.MONSTER
+	return Room.Type.sprint

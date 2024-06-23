@@ -13,7 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_ndagj"]
 script = ExtResource("2_udvhp")
-gold = 70
+kundenzufriedenheit = 0
 card_rewards = 3
 common_weight = 6.0
 uncommon_weight = 3.7

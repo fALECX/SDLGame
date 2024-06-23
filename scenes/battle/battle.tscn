@@ -54,7 +54,6 @@ music = ExtResource("3_nuoky")
 metadata/_edit_lock_ = true
 
 [node name="Battle1Skype" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(128, 72)
 scale = Vector2(0.364672, 0.2304)
 texture = ExtResource("6_6khi1")
